@@ -1,0 +1,91 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x12df04ed0 .scope module, "counter" "counter" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "rst";
+    .port_info 1 /INPUT 1 "tick_up";
+    .port_info 2 /INPUT 1 "tick_down";
+    .port_info 3 /OUTPUT 1 "max";
+    .port_info 4 /OUTPUT 1 "min";
+    .port_info 5 /OUTPUT 6 "count";
+P_0x12df09fd0 .param/l "MAX_COUNT" 0 2 2, C4<111100>;
+P_0x12df0a010 .param/l "MIN_COUNT" 0 2 3, C4<000000>;
+P_0x12df0a050 .param/l "NUMBER_OF_BIT" 0 2 4, +C4<00000000000000000000000000000110>;
+v0x12df0a120_0 .var "count", 5 0;
+v0x12df1a060_0 .var "max", 0 0;
+v0x12df1a100_0 .var "min", 0 0;
+o0x1200300a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12df1a1b0_0 .net "rst", 0 0, o0x1200300a0;  0 drivers
+o0x1200300d0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12df1a250_0 .net "tick_down", 0 0, o0x1200300d0;  0 drivers
+o0x120030100 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12df1a330_0 .net "tick_up", 0 0, o0x120030100;  0 drivers
+E_0x12df053d0 .event anyedge, v0x12df0a120_0;
+E_0x12df06200 .event posedge, v0x12df1a1b0_0, v0x12df1a250_0, v0x12df1a330_0;
+    .scope S_0x12df04ed0;
+T_0 ;
+    %wait E_0x12df06200;
+    %load/vec4 v0x12df1a1b0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x12df0a120_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x12df1a330_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.2, 8;
+    %load/vec4 v0x12df0a120_0;
+    %cmpi/u 60, 0, 6;
+    %jmp/0xz  T_0.4, 5;
+    %load/vec4 v0x12df0a120_0;
+    %addi 1, 0, 6;
+    %assign/vec4 v0x12df0a120_0, 0;
+T_0.4 ;
+T_0.2 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x12df04ed0;
+T_1 ;
+    %wait E_0x12df053d0;
+    %load/vec4 v0x12df0a120_0;
+    %cmpi/e 60, 0, 6;
+    %flag_mov 8, 4;
+    %jmp/0 T_1.0, 8;
+    %pushi/vec4 1, 0, 1;
+    %jmp/1 T_1.1, 8;
+T_1.0 ; End of true expr.
+    %pushi/vec4 0, 0, 1;
+    %jmp/0 T_1.1, 8;
+ ; End of false expr.
+    %blend;
+T_1.1;
+    %assign/vec4 v0x12df1a060_0, 0;
+    %load/vec4 v0x12df0a120_0;
+    %cmpi/e 0, 0, 6;
+    %flag_mov 8, 4;
+    %jmp/0 T_1.2, 8;
+    %pushi/vec4 1, 0, 1;
+    %jmp/1 T_1.3, 8;
+T_1.2 ; End of true expr.
+    %pushi/vec4 0, 0, 1;
+    %jmp/0 T_1.3, 8;
+ ; End of false expr.
+    %blend;
+T_1.3;
+    %assign/vec4 v0x12df1a100_0, 0;
+    %jmp T_1;
+    .thread T_1, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Modules/counter.v";

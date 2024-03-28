@@ -1,0 +1,139 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+vbin2bcd
+!s110 1711502104
+!i10b 1
+!s100 4;oP^DgDOTM3kgiiAKJ4E2
+I^J@<D6b<?:naXoU:?8ljZ1
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 d//Mac/AllFiles/Applications/CODESTUFF/Vericlock/ModelSim
+w1711501540
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd.v
+L0 1
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z3 !s108 1711502104.000000
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vbin2bcd_tb
+!s110 1711502105
+!i10b 1
+!s100 ;o<<;[TFI7nZLh=:JPhzS3
+I9degKh<DiN5iII^o`TGa30
+R0
+R1
+w1711502094
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd_tb.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin2bcd_tb.v|
+!i113 1
+R4
+R5
+vbin_to_bcd
+Z6 !s110 1711401495
+!i10b 1
+!s100 17IJgYKSkUfRR46Rh<R^d2
+I=6UJKQLFOh`_Zde1[[LmV1
+R0
+R1
+w1711401102
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd.v
+L0 21
+R2
+r1
+!s85 0
+31
+Z7 !s108 1711401495.000000
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd.v|
+!i113 1
+R4
+R5
+vbin_to_bcd_tb
+R6
+!i10b 1
+!s100 X[oXjIJ7Vl3Yj?lgaGNa^0
+IOVa3abjVY^XE^0kl^nbbi3
+R0
+R1
+w1711401467
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd_tb.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+R7
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/bin_to_bcd_tb.v|
+!i113 1
+R4
+R5
+vcounter
+Z8 !s110 1711320225
+!i10b 1
+!s100 F3cDZA>3D21OzT^Gklj7D3
+IioV<BDkWLn`^0E:cUa5WH1
+R0
+R1
+w1711318541
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter.v
+L0 1
+R2
+r1
+!s85 0
+31
+Z9 !s108 1711320225.000000
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter.v|
+!i113 1
+R4
+R5
+vcounter_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R8
+!i10b 1
+!s100 l[4jOaL`mMERJd?Xa@aib3
+IFGY7mBJgWYW2T58IS]8;00
+R0
+!s105 counter_tb_v_unit
+S1
+R1
+w1711320222
+8//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter_tb.v
+F//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+R9
+!s107 //Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter_tb.v|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|//Mac/AllFiles/Applications/CODESTUFF/Vericlock/Modules/counter_tb.v|
+!i113 1
+o-work work -sv
+R5
