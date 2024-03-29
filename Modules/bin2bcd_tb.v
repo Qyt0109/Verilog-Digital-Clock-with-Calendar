@@ -10,8 +10,13 @@ module bin2bcd_tb ();
   );
 
   initial begin
-    bin <= 6'b100100;  // 36
-    #10 bin <= 6'b011011;  // 27
+    // $dumpfile("./Simulate/bin2bcd.vcd");
+    // $dumpvars;
+    bin <= 6'b100100;  // 36 --> 0011 0110
+    #10;
+    bin <= 6'b011011;  // 27 --> 0010 0111
   end
+
+  // initial #20 $finish;
 
 endmodule  //bin2bcd_tb

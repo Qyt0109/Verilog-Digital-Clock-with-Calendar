@@ -1,8 +1,11 @@
 module calendar (
-    input            clk_100MHz,  // 100 MHz frequency clock
-    input            tick_1Hz,    // 1 Hz frequency signal from clock module
+  // System signals
+    // input            clk_100MHz,  // 100 MHz frequency clock
     input            reset,       // reset
+    // clock module signals
+    input            tick_1Hz,    // 1 Hz frequency signal from clock module
     input            end_of_day,  // End of the day signal from clock module
+    // calendar module signals
     input            inc_day,     // day++
     input            inc_month,   // month++
     input            inc_year,    // year++
@@ -11,30 +14,10 @@ module calendar (
     output reg [7:0] year         // year
 );
 
-  // Debounce the inc buttons
-  wire debounced_inc_day, debounced_inc_month, debounced_inc_year;
-
-  debounce
-      debounce_inc_day (
-          .clk(clk_100MHz),
-          .signal(inc_day),
-          .debounced_signal(debounced_inc_day)
-      ),
-      debounce_inc_month (
-          .clk(clk_100MHz),
-          .signal(inc_month),
-          .debounced_signal(debounced_inc_month)
-      ),
-      debounce_inc_year (
-          .clk(clk_100MHz),
-          .signal(inc_year),
-          .debounced_signal(debounced_inc_year)
-      );
-
   // Default date is 01/09/2001
   parameter DEFAULT_DAY_VALUE = 1;
   parameter DEFAULT_MONTH_VALUE = 9;
-  parameter DEFAULT_YEAR_VALUE = 1;
+  parameter DEFAULT_YEAR_VALUE = 23;
 
   // Calendar logic
   wire end_of_year;
@@ -44,11 +27,11 @@ module calendar (
   assign leap_year = (year % 4 == 0) ? 1 : 0;
 
   // Day control
-  always @(posedge tick_1Hz or posedge reset) begin
+  always @(posedge tick_1Hz or posedge inc_day or posedge reset) begin
     // reset
     if (reset) day = DEFAULT_DAY_VALUE;
     // If inc day button is pressed or end of day signal from clock, inc day value
-    else if (debounced_inc_day | end_of_day) begin
+    else if (inc_day | end_of_day) begin
       case (month)
         1: begin
           if (day == 31) day <= 1;
@@ -118,11 +101,11 @@ module calendar (
   end
 
   // Month control
-  always @(posedge tick_1Hz or posedge reset) begin
+  always @(posedge tick_1Hz or posedge inc_month or posedge reset) begin
     // reset
     if (reset) month = DEFAULT_MONTH_VALUE;
     // forced inc month by pushing inc month button
-    else if (debounced_inc_month) begin
+    else if (inc_month) begin
       if (month == 12) month <= 1;
       else month <= month + 1;
     end  // inc month based on current day/month
@@ -144,11 +127,11 @@ module calendar (
   end
 
   // Year control
-  always @(posedge tick_1Hz or posedge reset) begin
+  always @(posedge tick_1Hz or posedge inc_year or posedge reset) begin
     // reset
     if (reset) year = DEFAULT_YEAR_VALUE;
     // inc year if inc year button is pressed or end of year signal is trigged
-    else if (debounced_inc_year | end_of_year) begin
+    else if (inc_year | end_of_year) begin
       if (year == 99) year <= 0;
       else year <= year + 1;
     end
