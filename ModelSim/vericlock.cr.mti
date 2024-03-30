@@ -1,0 +1,92 @@
+//Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module vericlock
+
+Top level modules:
+	vericlock
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module calendar
+
+Top level modules:
+	calendar
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/timer1hz.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/timer1hz.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module timer1hz
+
+Top level modules:
+	timer1hz
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock_tb.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module vericlock_tb
+
+Top level modules:
+	vericlock_tb
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/timer1hz_tb.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/timer1hz_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module timer1hz_tb
+
+Top level modules:
+	timer1hz_tb
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/debounce_tb.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/debounce_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module debounce_tb
+
+Top level modules:
+	debounce_tb
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/seg7led.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/seg7led.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module seg7led
+
+Top level modules:
+	seg7led
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bin2bcd
+
+Top level modules:
+	bin2bcd
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module clock
+
+Top level modules:
+	clock
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/debounce.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/debounce.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module debounce
+
+Top level modules:
+	debounce
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock_tb.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module clock_tb
+
+Top level modules:
+	clock_tb
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock_tb2.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock_tb2.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module vericlock_tb
+
+Top level modules:
+	vericlock_tb
+
+} {} {}} //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd_tb.v {1 {vlog -work work -stats=none //Mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bin2bcd_tb
+
+Top level modules:
+	bin2bcd_tb
+
+} {} {}}

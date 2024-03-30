@@ -1,0 +1,1006 @@
+$date
+	Fri Mar 29 15:30:12 2024
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module vericlock_tb $end
+$var parameter 32 ! CLK_PERIOD $end
+$var reg 1 " clk_100MHz $end
+$var reg 1 # reset $end
+$var reg 1 $ inc_sec $end
+$var reg 1 % inc_hour $end
+$var reg 1 & inc_min $end
+$var wire 1 ' sec_7seg [13] $end
+$var wire 1 ( sec_7seg [12] $end
+$var wire 1 ) sec_7seg [11] $end
+$var wire 1 * sec_7seg [10] $end
+$var wire 1 + sec_7seg [9] $end
+$var wire 1 , sec_7seg [8] $end
+$var wire 1 - sec_7seg [7] $end
+$var wire 1 . sec_7seg [6] $end
+$var wire 1 / sec_7seg [5] $end
+$var wire 1 0 sec_7seg [4] $end
+$var wire 1 1 sec_7seg [3] $end
+$var wire 1 2 sec_7seg [2] $end
+$var wire 1 3 sec_7seg [1] $end
+$var wire 1 4 sec_7seg [0] $end
+$var wire 1 5 min_7seg [13] $end
+$var wire 1 6 min_7seg [12] $end
+$var wire 1 7 min_7seg [11] $end
+$var wire 1 8 min_7seg [10] $end
+$var wire 1 9 min_7seg [9] $end
+$var wire 1 : min_7seg [8] $end
+$var wire 1 ; min_7seg [7] $end
+$var wire 1 < min_7seg [6] $end
+$var wire 1 = min_7seg [5] $end
+$var wire 1 > min_7seg [4] $end
+$var wire 1 ? min_7seg [3] $end
+$var wire 1 @ min_7seg [2] $end
+$var wire 1 A min_7seg [1] $end
+$var wire 1 B min_7seg [0] $end
+$var wire 1 C hour_7seg [13] $end
+$var wire 1 D hour_7seg [12] $end
+$var wire 1 E hour_7seg [11] $end
+$var wire 1 F hour_7seg [10] $end
+$var wire 1 G hour_7seg [9] $end
+$var wire 1 H hour_7seg [8] $end
+$var wire 1 I hour_7seg [7] $end
+$var wire 1 J hour_7seg [6] $end
+$var wire 1 K hour_7seg [5] $end
+$var wire 1 L hour_7seg [4] $end
+$var wire 1 M hour_7seg [3] $end
+$var wire 1 N hour_7seg [2] $end
+$var wire 1 O hour_7seg [1] $end
+$var wire 1 P hour_7seg [0] $end
+$var reg 1 Q inc_day $end
+$var reg 1 R inc_month $end
+$var reg 1 S inc_year $end
+$var wire 1 T day_7seg [13] $end
+$var wire 1 U day_7seg [12] $end
+$var wire 1 V day_7seg [11] $end
+$var wire 1 W day_7seg [10] $end
+$var wire 1 X day_7seg [9] $end
+$var wire 1 Y day_7seg [8] $end
+$var wire 1 Z day_7seg [7] $end
+$var wire 1 [ day_7seg [6] $end
+$var wire 1 \ day_7seg [5] $end
+$var wire 1 ] day_7seg [4] $end
+$var wire 1 ^ day_7seg [3] $end
+$var wire 1 _ day_7seg [2] $end
+$var wire 1 ` day_7seg [1] $end
+$var wire 1 a day_7seg [0] $end
+$var wire 1 b month_7seg [13] $end
+$var wire 1 c month_7seg [12] $end
+$var wire 1 d month_7seg [11] $end
+$var wire 1 e month_7seg [10] $end
+$var wire 1 f month_7seg [9] $end
+$var wire 1 g month_7seg [8] $end
+$var wire 1 h month_7seg [7] $end
+$var wire 1 i month_7seg [6] $end
+$var wire 1 j month_7seg [5] $end
+$var wire 1 k month_7seg [4] $end
+$var wire 1 l month_7seg [3] $end
+$var wire 1 m month_7seg [2] $end
+$var wire 1 n month_7seg [1] $end
+$var wire 1 o month_7seg [0] $end
+$var wire 1 p year_7seg [27] $end
+$var wire 1 q year_7seg [26] $end
+$var wire 1 r year_7seg [25] $end
+$var wire 1 s year_7seg [24] $end
+$var wire 1 t year_7seg [23] $end
+$var wire 1 u year_7seg [22] $end
+$var wire 1 v year_7seg [21] $end
+$var wire 1 w year_7seg [20] $end
+$var wire 1 x year_7seg [19] $end
+$var wire 1 y year_7seg [18] $end
+$var wire 1 z year_7seg [17] $end
+$var wire 1 { year_7seg [16] $end
+$var wire 1 | year_7seg [15] $end
+$var wire 1 } year_7seg [14] $end
+$var wire 1 ~ year_7seg [13] $end
+$var wire 1 !! year_7seg [12] $end
+$var wire 1 "! year_7seg [11] $end
+$var wire 1 #! year_7seg [10] $end
+$var wire 1 $! year_7seg [9] $end
+$var wire 1 %! year_7seg [8] $end
+$var wire 1 &! year_7seg [7] $end
+$var wire 1 '! year_7seg [6] $end
+$var wire 1 (! year_7seg [5] $end
+$var wire 1 )! year_7seg [4] $end
+$var wire 1 *! year_7seg [3] $end
+$var wire 1 +! year_7seg [2] $end
+$var wire 1 ,! year_7seg [1] $end
+$var wire 1 -! year_7seg [0] $end
+
+$scope module dut $end
+$var parameter 32 .! MAX_COUNT $end
+$var wire 1 /! clk_100MHz $end
+$var wire 1 0! reset $end
+$var wire 1 1! inc_sec $end
+$var wire 1 2! inc_hour $end
+$var wire 1 3! inc_min $end
+$var wire 1 ' sec_7seg [13] $end
+$var wire 1 ( sec_7seg [12] $end
+$var wire 1 ) sec_7seg [11] $end
+$var wire 1 * sec_7seg [10] $end
+$var wire 1 + sec_7seg [9] $end
+$var wire 1 , sec_7seg [8] $end
+$var wire 1 - sec_7seg [7] $end
+$var wire 1 . sec_7seg [6] $end
+$var wire 1 / sec_7seg [5] $end
+$var wire 1 0 sec_7seg [4] $end
+$var wire 1 1 sec_7seg [3] $end
+$var wire 1 2 sec_7seg [2] $end
+$var wire 1 3 sec_7seg [1] $end
+$var wire 1 4 sec_7seg [0] $end
+$var wire 1 5 min_7seg [13] $end
+$var wire 1 6 min_7seg [12] $end
+$var wire 1 7 min_7seg [11] $end
+$var wire 1 8 min_7seg [10] $end
+$var wire 1 9 min_7seg [9] $end
+$var wire 1 : min_7seg [8] $end
+$var wire 1 ; min_7seg [7] $end
+$var wire 1 < min_7seg [6] $end
+$var wire 1 = min_7seg [5] $end
+$var wire 1 > min_7seg [4] $end
+$var wire 1 ? min_7seg [3] $end
+$var wire 1 @ min_7seg [2] $end
+$var wire 1 A min_7seg [1] $end
+$var wire 1 B min_7seg [0] $end
+$var wire 1 C hour_7seg [13] $end
+$var wire 1 D hour_7seg [12] $end
+$var wire 1 E hour_7seg [11] $end
+$var wire 1 F hour_7seg [10] $end
+$var wire 1 G hour_7seg [9] $end
+$var wire 1 H hour_7seg [8] $end
+$var wire 1 I hour_7seg [7] $end
+$var wire 1 J hour_7seg [6] $end
+$var wire 1 K hour_7seg [5] $end
+$var wire 1 L hour_7seg [4] $end
+$var wire 1 M hour_7seg [3] $end
+$var wire 1 N hour_7seg [2] $end
+$var wire 1 O hour_7seg [1] $end
+$var wire 1 P hour_7seg [0] $end
+$var wire 1 4! inc_day $end
+$var wire 1 5! inc_month $end
+$var wire 1 6! inc_year $end
+$var wire 1 7! day_7seg [13] $end
+$var wire 1 8! day_7seg [12] $end
+$var wire 1 9! day_7seg [11] $end
+$var wire 1 :! day_7seg [10] $end
+$var wire 1 ;! day_7seg [9] $end
+$var wire 1 <! day_7seg [8] $end
+$var wire 1 =! day_7seg [7] $end
+$var wire 1 >! day_7seg [6] $end
+$var wire 1 ?! day_7seg [5] $end
+$var wire 1 @! day_7seg [4] $end
+$var wire 1 A! day_7seg [3] $end
+$var wire 1 B! day_7seg [2] $end
+$var wire 1 C! day_7seg [1] $end
+$var wire 1 D! day_7seg [0] $end
+$var wire 1 E! month_7seg [13] $end
+$var wire 1 F! month_7seg [12] $end
+$var wire 1 G! month_7seg [11] $end
+$var wire 1 H! month_7seg [10] $end
+$var wire 1 I! month_7seg [9] $end
+$var wire 1 J! month_7seg [8] $end
+$var wire 1 K! month_7seg [7] $end
+$var wire 1 L! month_7seg [6] $end
+$var wire 1 M! month_7seg [5] $end
+$var wire 1 N! month_7seg [4] $end
+$var wire 1 O! month_7seg [3] $end
+$var wire 1 P! month_7seg [2] $end
+$var wire 1 Q! month_7seg [1] $end
+$var wire 1 R! month_7seg [0] $end
+$var wire 1 S! year_7seg [27] $end
+$var wire 1 T! year_7seg [26] $end
+$var wire 1 U! year_7seg [25] $end
+$var wire 1 V! year_7seg [24] $end
+$var wire 1 W! year_7seg [23] $end
+$var wire 1 X! year_7seg [22] $end
+$var wire 1 Y! year_7seg [21] $end
+$var wire 1 Z! year_7seg [20] $end
+$var wire 1 [! year_7seg [19] $end
+$var wire 1 \! year_7seg [18] $end
+$var wire 1 ]! year_7seg [17] $end
+$var wire 1 ^! year_7seg [16] $end
+$var wire 1 _! year_7seg [15] $end
+$var wire 1 `! year_7seg [14] $end
+$var wire 1 a! year_7seg [13] $end
+$var wire 1 b! year_7seg [12] $end
+$var wire 1 c! year_7seg [11] $end
+$var wire 1 d! year_7seg [10] $end
+$var wire 1 e! year_7seg [9] $end
+$var wire 1 f! year_7seg [8] $end
+$var wire 1 g! year_7seg [7] $end
+$var wire 1 h! year_7seg [6] $end
+$var wire 1 i! year_7seg [5] $end
+$var wire 1 j! year_7seg [4] $end
+$var wire 1 k! year_7seg [3] $end
+$var wire 1 l! year_7seg [2] $end
+$var wire 1 m! year_7seg [1] $end
+$var wire 1 n! year_7seg [0] $end
+$var wire 1 o! debounced_inc_sec $end
+$var wire 1 p! debounced_inc_min $end
+$var wire 1 q! debounced_inc_hour $end
+$var wire 1 r! debounced_inc_day $end
+$var wire 1 s! debounced_inc_month $end
+$var wire 1 t! debounced_inc_year $end
+$var wire 1 u! tick_1Hz $end
+$var wire 1 v! end_of_day $end
+$var wire 1 w! sec [7] $end
+$var wire 1 x! sec [6] $end
+$var wire 1 y! sec [5] $end
+$var wire 1 z! sec [4] $end
+$var wire 1 {! sec [3] $end
+$var wire 1 |! sec [2] $end
+$var wire 1 }! sec [1] $end
+$var wire 1 ~! sec [0] $end
+$var wire 1 !" min [7] $end
+$var wire 1 "" min [6] $end
+$var wire 1 #" min [5] $end
+$var wire 1 $" min [4] $end
+$var wire 1 %" min [3] $end
+$var wire 1 &" min [2] $end
+$var wire 1 '" min [1] $end
+$var wire 1 (" min [0] $end
+$var wire 1 )" hour [7] $end
+$var wire 1 *" hour [6] $end
+$var wire 1 +" hour [5] $end
+$var wire 1 ," hour [4] $end
+$var wire 1 -" hour [3] $end
+$var wire 1 ." hour [2] $end
+$var wire 1 /" hour [1] $end
+$var wire 1 0" hour [0] $end
+$var wire 1 1" day [7] $end
+$var wire 1 2" day [6] $end
+$var wire 1 3" day [5] $end
+$var wire 1 4" day [4] $end
+$var wire 1 5" day [3] $end
+$var wire 1 6" day [2] $end
+$var wire 1 7" day [1] $end
+$var wire 1 8" day [0] $end
+$var wire 1 9" month [7] $end
+$var wire 1 :" month [6] $end
+$var wire 1 ;" month [5] $end
+$var wire 1 <" month [4] $end
+$var wire 1 =" month [3] $end
+$var wire 1 >" month [2] $end
+$var wire 1 ?" month [1] $end
+$var wire 1 @" month [0] $end
+$var wire 1 A" year [7] $end
+$var wire 1 B" year [6] $end
+$var wire 1 C" year [5] $end
+$var wire 1 D" year [4] $end
+$var wire 1 E" year [3] $end
+$var wire 1 F" year [2] $end
+$var wire 1 G" year [1] $end
+$var wire 1 H" year [0] $end
+$var wire 1 I" sec_bcd [7] $end
+$var wire 1 J" sec_bcd [6] $end
+$var wire 1 K" sec_bcd [5] $end
+$var wire 1 L" sec_bcd [4] $end
+$var wire 1 M" sec_bcd [3] $end
+$var wire 1 N" sec_bcd [2] $end
+$var wire 1 O" sec_bcd [1] $end
+$var wire 1 P" sec_bcd [0] $end
+$var wire 1 Q" min_bcd [7] $end
+$var wire 1 R" min_bcd [6] $end
+$var wire 1 S" min_bcd [5] $end
+$var wire 1 T" min_bcd [4] $end
+$var wire 1 U" min_bcd [3] $end
+$var wire 1 V" min_bcd [2] $end
+$var wire 1 W" min_bcd [1] $end
+$var wire 1 X" min_bcd [0] $end
+$var wire 1 Y" hour_bcd [7] $end
+$var wire 1 Z" hour_bcd [6] $end
+$var wire 1 [" hour_bcd [5] $end
+$var wire 1 \" hour_bcd [4] $end
+$var wire 1 ]" hour_bcd [3] $end
+$var wire 1 ^" hour_bcd [2] $end
+$var wire 1 _" hour_bcd [1] $end
+$var wire 1 `" hour_bcd [0] $end
+$var wire 1 a" day_bcd [7] $end
+$var wire 1 b" day_bcd [6] $end
+$var wire 1 c" day_bcd [5] $end
+$var wire 1 d" day_bcd [4] $end
+$var wire 1 e" day_bcd [3] $end
+$var wire 1 f" day_bcd [2] $end
+$var wire 1 g" day_bcd [1] $end
+$var wire 1 h" day_bcd [0] $end
+$var wire 1 i" month_bcd [7] $end
+$var wire 1 j" month_bcd [6] $end
+$var wire 1 k" month_bcd [5] $end
+$var wire 1 l" month_bcd [4] $end
+$var wire 1 m" month_bcd [3] $end
+$var wire 1 n" month_bcd [2] $end
+$var wire 1 o" month_bcd [1] $end
+$var wire 1 p" month_bcd [0] $end
+$var wire 1 q" year_bcd [7] $end
+$var wire 1 r" year_bcd [6] $end
+$var wire 1 s" year_bcd [5] $end
+$var wire 1 t" year_bcd [4] $end
+$var wire 1 u" year_bcd [3] $end
+$var wire 1 v" year_bcd [2] $end
+$var wire 1 w" year_bcd [1] $end
+$var wire 1 x" year_bcd [0] $end
+
+$scope module debounce_inc_sec $end
+$var wire 1 /! clk $end
+$var wire 1 1! signal $end
+$var reg 1 y" debounced_signal $end
+$var reg 1 z" delayed_signal $end
+$upscope $end
+
+$scope module debounce_inc_min $end
+$var wire 1 /! clk $end
+$var wire 1 3! signal $end
+$var reg 1 {" debounced_signal $end
+$var reg 1 |" delayed_signal $end
+$upscope $end
+
+$scope module debounce_inc_hour $end
+$var wire 1 /! clk $end
+$var wire 1 2! signal $end
+$var reg 1 }" debounced_signal $end
+$var reg 1 ~" delayed_signal $end
+$upscope $end
+
+$scope module debounce_inc_day $end
+$var wire 1 /! clk $end
+$var wire 1 4! signal $end
+$var reg 1 !# debounced_signal $end
+$var reg 1 "# delayed_signal $end
+$upscope $end
+
+$scope module debounce_inc_month $end
+$var wire 1 /! clk $end
+$var wire 1 5! signal $end
+$var reg 1 ## debounced_signal $end
+$var reg 1 $# delayed_signal $end
+$upscope $end
+
+$scope module debounce_inc_year $end
+$var wire 1 /! clk $end
+$var wire 1 6! signal $end
+$var reg 1 %# debounced_signal $end
+$var reg 1 &# delayed_signal $end
+$upscope $end
+
+$scope module timer $end
+$var parameter 32 '# MAX_COUNT $end
+$var wire 1 /! clk_100MHz $end
+$var wire 1 0! reset $end
+$var wire 1 u! clk_1Hz $end
+$var reg 1 (# r_clk_1Hz $end
+$var reg 32 )# counter_1hz [31:0] $end
+$upscope $end
+
+$scope module clock_inst $end
+$var parameter 32 *# DEFAULT_SEC_VALUE $end
+$var parameter 32 +# DEFAULT_MIN_VALUE $end
+$var parameter 32 ,# DEFAULT_HOUR_VALUE $end
+$var wire 1 0! reset $end
+$var wire 1 u! tick_1Hz $end
+$var wire 1 o! inc_sec $end
+$var wire 1 q! inc_hour $end
+$var wire 1 p! inc_min $end
+$var wire 1 v! end_of_day $end
+$var reg 8 -# sec [7:0] $end
+$var reg 8 .# min [7:0] $end
+$var reg 8 /# hour [7:0] $end
+$upscope $end
+
+$scope module calendar_inst $end
+$var parameter 32 0# DEFAULT_DAY_VALUE $end
+$var parameter 32 1# DEFAULT_MONTH_VALUE $end
+$var parameter 32 2# DEFAULT_YEAR_VALUE $end
+$var wire 1 0! reset $end
+$var wire 1 u! tick_1Hz $end
+$var wire 1 v! end_of_day $end
+$var wire 1 r! inc_day $end
+$var wire 1 s! inc_month $end
+$var wire 1 t! inc_year $end
+$var reg 8 3# day [7:0] $end
+$var reg 8 4# month [7:0] $end
+$var reg 8 5# year [7:0] $end
+$var wire 1 6# end_of_year $end
+$var wire 1 7# leap_year $end
+$upscope $end
+
+$scope module bin2bcd_sec $end
+$var wire 1 w! bin [7] $end
+$var wire 1 x! bin [6] $end
+$var wire 1 y! bin [5] $end
+$var wire 1 z! bin [4] $end
+$var wire 1 {! bin [3] $end
+$var wire 1 |! bin [2] $end
+$var wire 1 }! bin [1] $end
+$var wire 1 ~! bin [0] $end
+$var reg 8 8# bcd [7:0] $end
+$var integer 32 9# i $end
+$upscope $end
+
+$scope module bin2bcd_min $end
+$var wire 1 !" bin [7] $end
+$var wire 1 "" bin [6] $end
+$var wire 1 #" bin [5] $end
+$var wire 1 $" bin [4] $end
+$var wire 1 %" bin [3] $end
+$var wire 1 &" bin [2] $end
+$var wire 1 '" bin [1] $end
+$var wire 1 (" bin [0] $end
+$var reg 8 :# bcd [7:0] $end
+$var integer 32 ;# i $end
+$upscope $end
+
+$scope module bin2bcd_hour $end
+$var wire 1 )" bin [7] $end
+$var wire 1 *" bin [6] $end
+$var wire 1 +" bin [5] $end
+$var wire 1 ," bin [4] $end
+$var wire 1 -" bin [3] $end
+$var wire 1 ." bin [2] $end
+$var wire 1 /" bin [1] $end
+$var wire 1 0" bin [0] $end
+$var reg 8 <# bcd [7:0] $end
+$var integer 32 =# i $end
+$upscope $end
+
+$scope module bin2bcd_day $end
+$var wire 1 1" bin [7] $end
+$var wire 1 2" bin [6] $end
+$var wire 1 3" bin [5] $end
+$var wire 1 4" bin [4] $end
+$var wire 1 5" bin [3] $end
+$var wire 1 6" bin [2] $end
+$var wire 1 7" bin [1] $end
+$var wire 1 8" bin [0] $end
+$var reg 8 ># bcd [7:0] $end
+$var integer 32 ?# i $end
+$upscope $end
+
+$scope module bin2bcd_month $end
+$var wire 1 9" bin [7] $end
+$var wire 1 :" bin [6] $end
+$var wire 1 ;" bin [5] $end
+$var wire 1 <" bin [4] $end
+$var wire 1 =" bin [3] $end
+$var wire 1 >" bin [2] $end
+$var wire 1 ?" bin [1] $end
+$var wire 1 @" bin [0] $end
+$var reg 8 @# bcd [7:0] $end
+$var integer 32 A# i $end
+$upscope $end
+
+$scope module bin2bcd_year $end
+$var wire 1 A" bin [7] $end
+$var wire 1 B" bin [6] $end
+$var wire 1 C" bin [5] $end
+$var wire 1 D" bin [4] $end
+$var wire 1 E" bin [3] $end
+$var wire 1 F" bin [2] $end
+$var wire 1 G" bin [1] $end
+$var wire 1 H" bin [0] $end
+$var reg 8 B# bcd [7:0] $end
+$var integer 32 C# i $end
+$upscope $end
+
+$scope module seg7led_sec_high $end
+$var wire 1 I" hex [3] $end
+$var wire 1 J" hex [2] $end
+$var wire 1 K" hex [1] $end
+$var wire 1 L" hex [0] $end
+$var reg 7 D# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_sec_low $end
+$var wire 1 M" hex [3] $end
+$var wire 1 N" hex [2] $end
+$var wire 1 O" hex [1] $end
+$var wire 1 P" hex [0] $end
+$var reg 7 E# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_min_high $end
+$var wire 1 Q" hex [3] $end
+$var wire 1 R" hex [2] $end
+$var wire 1 S" hex [1] $end
+$var wire 1 T" hex [0] $end
+$var reg 7 F# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_min_low $end
+$var wire 1 U" hex [3] $end
+$var wire 1 V" hex [2] $end
+$var wire 1 W" hex [1] $end
+$var wire 1 X" hex [0] $end
+$var reg 7 G# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_hour_high $end
+$var wire 1 Y" hex [3] $end
+$var wire 1 Z" hex [2] $end
+$var wire 1 [" hex [1] $end
+$var wire 1 \" hex [0] $end
+$var reg 7 H# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_hour_low $end
+$var wire 1 ]" hex [3] $end
+$var wire 1 ^" hex [2] $end
+$var wire 1 _" hex [1] $end
+$var wire 1 `" hex [0] $end
+$var reg 7 I# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_day_high $end
+$var wire 1 a" hex [3] $end
+$var wire 1 b" hex [2] $end
+$var wire 1 c" hex [1] $end
+$var wire 1 d" hex [0] $end
+$var reg 7 J# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_day_low $end
+$var wire 1 e" hex [3] $end
+$var wire 1 f" hex [2] $end
+$var wire 1 g" hex [1] $end
+$var wire 1 h" hex [0] $end
+$var reg 7 K# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_month_high $end
+$var wire 1 i" hex [3] $end
+$var wire 1 j" hex [2] $end
+$var wire 1 k" hex [1] $end
+$var wire 1 l" hex [0] $end
+$var reg 7 L# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_month_low $end
+$var wire 1 m" hex [3] $end
+$var wire 1 n" hex [2] $end
+$var wire 1 o" hex [1] $end
+$var wire 1 p" hex [0] $end
+$var reg 7 M# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_year_high $end
+$var wire 1 q" hex [3] $end
+$var wire 1 r" hex [2] $end
+$var wire 1 s" hex [1] $end
+$var wire 1 t" hex [0] $end
+$var reg 7 N# led_control [6:0] $end
+$upscope $end
+
+$scope module seg7led_year_low $end
+$var wire 1 u" hex [3] $end
+$var wire 1 v" hex [2] $end
+$var wire 1 w" hex [1] $end
+$var wire 1 x" hex [0] $end
+$var reg 7 O# led_control [6:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+1#
+0$
+0%
+0&
+0Q
+0R
+0S
+xy"
+0z"
+x{"
+0|"
+x}"
+0~"
+x!#
+0"#
+x##
+0$#
+x%#
+0&#
+0(#
+b0 )#
+b0 -#
+b0 .#
+b0 /#
+b1 3#
+b1001 4#
+b10111 5#
+b0 8#
+b0 :#
+b0 <#
+b1 >#
+b1001 @#
+b100011 B#
+b1 D#
+b1 E#
+b1 F#
+b1 G#
+b1 H#
+b1 I#
+b1 J#
+b1001111 K#
+b1 L#
+b100 M#
+b10010 N#
+b110 O#
+b1010 !
+b10111110101111000001111111 .!
+b10111110101111000001111111 '#
+b0 *#
+b0 +#
+b0 ,#
+b1 0#
+b1001 1#
+b10111 2#
+b1000 9#
+b1000 ;#
+b1000 =#
+b1000 ?#
+b1000 A#
+b1000 C#
+14
+03
+02
+01
+00
+0/
+0.
+1-
+0,
+0+
+0*
+0)
+0(
+0'
+1B
+0A
+0@
+0?
+0>
+0=
+0<
+1;
+0:
+09
+08
+07
+06
+05
+1P
+0O
+0N
+0M
+0L
+0K
+0J
+1I
+0H
+0G
+0F
+0E
+0D
+0C
+za
+z`
+z_
+z^
+z]
+z\
+z[
+zZ
+zY
+zX
+zW
+zV
+zU
+zT
+zo
+zn
+zm
+zl
+zk
+zj
+zi
+zh
+zg
+zf
+ze
+zd
+zc
+zb
+z-!
+z,!
+z+!
+z*!
+z)!
+z(!
+z'!
+z&!
+z%!
+z$!
+z#!
+z"!
+z!!
+z~
+z}
+z|
+z{
+zz
+zy
+zx
+zw
+zv
+zu
+zt
+zs
+zr
+zq
+zp
+xo!
+xp!
+xq!
+xr!
+xs!
+xt!
+0u!
+0v!
+0~!
+0}!
+0|!
+0{!
+0z!
+0y!
+0x!
+0w!
+0("
+0'"
+0&"
+0%"
+0$"
+0#"
+0""
+0!"
+00"
+0/"
+0."
+0-"
+0,"
+0+"
+0*"
+0)"
+18"
+07"
+06"
+05"
+04"
+03"
+02"
+01"
+1@"
+0?"
+0>"
+1="
+0<"
+0;"
+0:"
+09"
+1H"
+1G"
+1F"
+0E"
+1D"
+0C"
+0B"
+0A"
+06#
+07#
+0P"
+0O"
+0N"
+0M"
+0L"
+0K"
+0J"
+0I"
+0X"
+0W"
+0V"
+0U"
+0T"
+0S"
+0R"
+0Q"
+0`"
+0_"
+0^"
+0]"
+0\"
+0["
+0Z"
+0Y"
+1h"
+0g"
+0f"
+0e"
+0d"
+0c"
+0b"
+0a"
+1p"
+0o"
+0n"
+1m"
+0l"
+0k"
+0j"
+0i"
+1x"
+1w"
+0v"
+0u"
+0t"
+1s"
+0r"
+0q"
+02!
+03!
+01!
+10!
+0/!
+z4!
+z5!
+z6!
+1D!
+1C!
+1B!
+1A!
+0@!
+0?!
+1>!
+1=!
+0<!
+0;!
+0:!
+09!
+08!
+07!
+0R!
+0Q!
+1P!
+0O!
+0N!
+0M!
+0L!
+1K!
+0J!
+0I!
+0H!
+0G!
+0F!
+0E!
+0n!
+1m!
+1l!
+0k!
+0j!
+0i!
+0h!
+0g!
+1f!
+0e!
+0d!
+1c!
+0b!
+0a!
+z`!
+z_!
+z^!
+z]!
+z\!
+z[!
+zZ!
+zY!
+zX!
+zW!
+zV!
+zU!
+zT!
+zS!
+$end
+#5000
+1"
+1/!
+0y"
+0{"
+0}"
+z"#
+0!#
+z$#
+0##
+z&#
+0%#
+0o!
+0p!
+0q!
+0r!
+0s!
+0t!
+#10000
+0"
+0/!
+#15000
+1"
+1/!
+z!#
+z##
+z%#
+zr!
+zs!
+zt!
+#20000
+0"
+0/!
+#25000
+1"
+1/!
+#30000
+0"
+0/!
+#35000
+1"
+1/!
+#40000
+0"
+0/!
+#45000
+1"
+1/!
+#50000
+0"
+0/!
+#55000
+1"
+1/!
+#60000
+0"
+0/!
+#65000
+1"
+1/!
+#70000
+0"
+0/!
+#75000
+1"
+1/!
+#80000
+0"
+0/!
+#85000
+1"
+1/!
+#90000
+0"
+0/!
+#95000
+1"
+1/!
+#100000
+0#
+0"
+00!
+0/!

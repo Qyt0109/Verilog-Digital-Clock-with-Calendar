@@ -1,10 +1,9 @@
-module timer1hz #(
-    parameter MAX_COUNT = 100_000_000 / 2 - 1
-) (
+module timer1hz (
     input  clk_100MHz,  // 100 MHz frequency clock
     input  reset,       // reset
     output clk_1Hz      // // 1 Hz frequency clock
 );
+  parameter MAX_COUNT =  50_000_000 / 2 - 1;
 
   reg r_clk_1Hz = 1'b0;
 

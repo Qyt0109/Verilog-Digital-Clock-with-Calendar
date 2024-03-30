@@ -1,0 +1,265 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "seg7_0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg7_7[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tick_1Hz_check",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clk_100MHz",
+					"strict" : false
+				},
+				{
+					"name" : "inc_2",
+					"strict" : false
+				},
+				{
+					"name" : "inc_enable",
+					"strict" : false
+				},
+				{
+					"name" : "inc_0",
+					"strict" : false
+				},
+				{
+					"name" : "inc_1",
+					"strict" : false
+				},
+				{
+					"name" : "datetime",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

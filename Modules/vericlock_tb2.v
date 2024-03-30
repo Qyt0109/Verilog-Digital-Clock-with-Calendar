@@ -32,8 +32,8 @@ module vericlock_tb ();
   end
 
   initial begin
-    $dumpfile("./Simulate/vericlock.vcd");
-    $dumpvars;
+    // $dumpfile("./Simulate/vericlock.vcd");
+    // $dumpvars;
     reset = 1;
     #(CLK_PERIOD * 10);
     reset = 0;

@@ -1,0 +1,635 @@
+|vericlock
+clk_100MHz => clk_100MHz.IN9
+reset => _.IN1
+reset => _.IN1
+reset => _.IN1
+datetime => datetime.IN1
+inc_enable => inc_enable.IN1
+inc_0 => inc_hour.DATAB
+inc_0 => inc_day.DATAB
+inc_1 => inc_min.DATAB
+inc_1 => inc_month.DATAB
+inc_2 => inc_sec.DATAB
+inc_2 => inc_year.DATAB
+seg7_0[0] << seg7led:sec_7seg_0.led_control
+seg7_0[1] << seg7led:sec_7seg_0.led_control
+seg7_0[2] << seg7led:sec_7seg_0.led_control
+seg7_0[3] << seg7led:sec_7seg_0.led_control
+seg7_0[4] << seg7led:sec_7seg_0.led_control
+seg7_0[5] << seg7led:sec_7seg_0.led_control
+seg7_0[6] << seg7led:sec_7seg_0.led_control
+seg7_1[0] << seg7led:sec_7seg_1.led_control
+seg7_1[1] << seg7led:sec_7seg_1.led_control
+seg7_1[2] << seg7led:sec_7seg_1.led_control
+seg7_1[3] << seg7led:sec_7seg_1.led_control
+seg7_1[4] << seg7led:sec_7seg_1.led_control
+seg7_1[5] << seg7led:sec_7seg_1.led_control
+seg7_1[6] << seg7led:sec_7seg_1.led_control
+seg7_2[0] << seg7led:sec_7seg_2.led_control
+seg7_2[1] << seg7led:sec_7seg_2.led_control
+seg7_2[2] << seg7led:sec_7seg_2.led_control
+seg7_2[3] << seg7led:sec_7seg_2.led_control
+seg7_2[4] << seg7led:sec_7seg_2.led_control
+seg7_2[5] << seg7led:sec_7seg_2.led_control
+seg7_2[6] << seg7led:sec_7seg_2.led_control
+seg7_3[0] << seg7led:sec_7seg_3.led_control
+seg7_3[1] << seg7led:sec_7seg_3.led_control
+seg7_3[2] << seg7led:sec_7seg_3.led_control
+seg7_3[3] << seg7led:sec_7seg_3.led_control
+seg7_3[4] << seg7led:sec_7seg_3.led_control
+seg7_3[5] << seg7led:sec_7seg_3.led_control
+seg7_3[6] << seg7led:sec_7seg_3.led_control
+seg7_4[0] << seg7led:sec_7seg_4.led_control
+seg7_4[1] << seg7led:sec_7seg_4.led_control
+seg7_4[2] << seg7led:sec_7seg_4.led_control
+seg7_4[3] << seg7led:sec_7seg_4.led_control
+seg7_4[4] << seg7led:sec_7seg_4.led_control
+seg7_4[5] << seg7led:sec_7seg_4.led_control
+seg7_4[6] << seg7led:sec_7seg_4.led_control
+seg7_5[0] << seg7led:sec_7seg_5.led_control
+seg7_5[1] << seg7led:sec_7seg_5.led_control
+seg7_5[2] << seg7led:sec_7seg_5.led_control
+seg7_5[3] << seg7led:sec_7seg_5.led_control
+seg7_5[4] << seg7led:sec_7seg_5.led_control
+seg7_5[5] << seg7led:sec_7seg_5.led_control
+seg7_5[6] << seg7led:sec_7seg_5.led_control
+seg7_6[0] << seg7led:sec_7seg_6.led_control
+seg7_6[1] << seg7led:sec_7seg_6.led_control
+seg7_6[2] << seg7led:sec_7seg_6.led_control
+seg7_6[3] << seg7led:sec_7seg_6.led_control
+seg7_6[4] << seg7led:sec_7seg_6.led_control
+seg7_6[5] << seg7led:sec_7seg_6.led_control
+seg7_6[6] << seg7led:sec_7seg_6.led_control
+seg7_7[0] << seg7led:sec_7seg_7.led_control
+seg7_7[1] << seg7led:sec_7seg_7.led_control
+seg7_7[2] << seg7led:sec_7seg_7.led_control
+seg7_7[3] << seg7led:sec_7seg_7.led_control
+seg7_7[4] << seg7led:sec_7seg_7.led_control
+seg7_7[5] << seg7led:sec_7seg_7.led_control
+seg7_7[6] << seg7led:sec_7seg_7.led_control
+tick_1Hz_check << tick_1Hz.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_datetime
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+clk => delayed_signal[2].CLK
+clk => delayed_signal[3].CLK
+clk => delayed_signal[4].CLK
+clk => delayed_signal[5].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_enable
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+clk => delayed_signal[2].CLK
+clk => delayed_signal[3].CLK
+clk => delayed_signal[4].CLK
+clk => delayed_signal[5].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_sec
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_min
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_hour
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_day
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_month
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|debounce:debounce_inc_year
+clk => delayed_signal[0].CLK
+clk => delayed_signal[1].CLK
+signal => delayed_signal[0].DATAIN
+debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|timer1hz:timer
+clk_100MHz => counter_1hz[0].CLK
+clk_100MHz => counter_1hz[1].CLK
+clk_100MHz => counter_1hz[2].CLK
+clk_100MHz => counter_1hz[3].CLK
+clk_100MHz => counter_1hz[4].CLK
+clk_100MHz => counter_1hz[5].CLK
+clk_100MHz => counter_1hz[6].CLK
+clk_100MHz => counter_1hz[7].CLK
+clk_100MHz => counter_1hz[8].CLK
+clk_100MHz => counter_1hz[9].CLK
+clk_100MHz => counter_1hz[10].CLK
+clk_100MHz => counter_1hz[11].CLK
+clk_100MHz => counter_1hz[12].CLK
+clk_100MHz => counter_1hz[13].CLK
+clk_100MHz => counter_1hz[14].CLK
+clk_100MHz => counter_1hz[15].CLK
+clk_100MHz => counter_1hz[16].CLK
+clk_100MHz => counter_1hz[17].CLK
+clk_100MHz => counter_1hz[18].CLK
+clk_100MHz => counter_1hz[19].CLK
+clk_100MHz => counter_1hz[20].CLK
+clk_100MHz => counter_1hz[21].CLK
+clk_100MHz => counter_1hz[22].CLK
+clk_100MHz => counter_1hz[23].CLK
+clk_100MHz => counter_1hz[24].CLK
+clk_100MHz => counter_1hz[25].CLK
+clk_100MHz => counter_1hz[26].CLK
+clk_100MHz => counter_1hz[27].CLK
+clk_100MHz => counter_1hz[28].CLK
+clk_100MHz => counter_1hz[29].CLK
+clk_100MHz => counter_1hz[30].CLK
+clk_100MHz => counter_1hz[31].CLK
+clk_100MHz => r_clk_1Hz.CLK
+reset => counter_1hz[0].ACLR
+reset => counter_1hz[1].ACLR
+reset => counter_1hz[2].ACLR
+reset => counter_1hz[3].ACLR
+reset => counter_1hz[4].ACLR
+reset => counter_1hz[5].ACLR
+reset => counter_1hz[6].ACLR
+reset => counter_1hz[7].ACLR
+reset => counter_1hz[8].ACLR
+reset => counter_1hz[9].ACLR
+reset => counter_1hz[10].ACLR
+reset => counter_1hz[11].ACLR
+reset => counter_1hz[12].ACLR
+reset => counter_1hz[13].ACLR
+reset => counter_1hz[14].ACLR
+reset => counter_1hz[15].ACLR
+reset => counter_1hz[16].ACLR
+reset => counter_1hz[17].ACLR
+reset => counter_1hz[18].ACLR
+reset => counter_1hz[19].ACLR
+reset => counter_1hz[20].ACLR
+reset => counter_1hz[21].ACLR
+reset => counter_1hz[22].ACLR
+reset => counter_1hz[23].ACLR
+reset => counter_1hz[24].ACLR
+reset => counter_1hz[25].ACLR
+reset => counter_1hz[26].ACLR
+reset => counter_1hz[27].ACLR
+reset => counter_1hz[28].ACLR
+reset => counter_1hz[29].ACLR
+reset => counter_1hz[30].ACLR
+reset => counter_1hz[31].ACLR
+reset => r_clk_1Hz.ACLR
+clk_1Hz <= r_clk_1Hz.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|clock:clock_inst
+reset => r_hour[0].ACLR
+reset => r_hour[1].ACLR
+reset => r_hour[2].ACLR
+reset => r_hour[3].ACLR
+reset => r_hour[4].ACLR
+reset => r_hour[5].ACLR
+reset => r_hour[6].ACLR
+reset => r_hour[7].ACLR
+reset => r_min[0].ACLR
+reset => r_min[1].ACLR
+reset => r_min[2].ACLR
+reset => r_min[3].ACLR
+reset => r_min[4].ACLR
+reset => r_min[5].ACLR
+reset => r_min[6].ACLR
+reset => r_min[7].ACLR
+reset => r_sec[0].ACLR
+reset => r_sec[1].ACLR
+reset => r_sec[2].ACLR
+reset => r_sec[3].ACLR
+reset => r_sec[4].ACLR
+reset => r_sec[5].ACLR
+reset => r_sec[6].ACLR
+reset => r_sec[7].ACLR
+reset => r_sec[7].IN0
+reset => r_min[7].IN0
+reset => r_hour[7].IN0
+tick_1Hz => r_hour[0].CLK
+tick_1Hz => r_hour[1].CLK
+tick_1Hz => r_hour[2].CLK
+tick_1Hz => r_hour[3].CLK
+tick_1Hz => r_hour[4].CLK
+tick_1Hz => r_hour[5].CLK
+tick_1Hz => r_hour[6].CLK
+tick_1Hz => r_hour[7].CLK
+tick_1Hz => r_min[0].CLK
+tick_1Hz => r_min[1].CLK
+tick_1Hz => r_min[2].CLK
+tick_1Hz => r_min[3].CLK
+tick_1Hz => r_min[4].CLK
+tick_1Hz => r_min[5].CLK
+tick_1Hz => r_min[6].CLK
+tick_1Hz => r_min[7].CLK
+tick_1Hz => r_sec[7].IN1
+inc_sec => r_sec[0].CLK
+inc_sec => r_sec[1].CLK
+inc_sec => r_sec[2].CLK
+inc_sec => r_sec[3].CLK
+inc_sec => r_sec[4].CLK
+inc_sec => r_sec[5].CLK
+inc_sec => r_sec[6].CLK
+inc_sec => r_sec[7].CLK
+inc_hour => r_hour[7].IN1
+inc_min => r_min[7].IN1
+end_of_day <= end_of_day.DB_MAX_OUTPUT_PORT_TYPE
+sec[0] <= r_sec[0].DB_MAX_OUTPUT_PORT_TYPE
+sec[1] <= r_sec[1].DB_MAX_OUTPUT_PORT_TYPE
+sec[2] <= r_sec[2].DB_MAX_OUTPUT_PORT_TYPE
+sec[3] <= r_sec[3].DB_MAX_OUTPUT_PORT_TYPE
+sec[4] <= r_sec[4].DB_MAX_OUTPUT_PORT_TYPE
+sec[5] <= r_sec[5].DB_MAX_OUTPUT_PORT_TYPE
+sec[6] <= r_sec[6].DB_MAX_OUTPUT_PORT_TYPE
+sec[7] <= r_sec[7].DB_MAX_OUTPUT_PORT_TYPE
+min[0] <= r_min[0].DB_MAX_OUTPUT_PORT_TYPE
+min[1] <= r_min[1].DB_MAX_OUTPUT_PORT_TYPE
+min[2] <= r_min[2].DB_MAX_OUTPUT_PORT_TYPE
+min[3] <= r_min[3].DB_MAX_OUTPUT_PORT_TYPE
+min[4] <= r_min[4].DB_MAX_OUTPUT_PORT_TYPE
+min[5] <= r_min[5].DB_MAX_OUTPUT_PORT_TYPE
+min[6] <= r_min[6].DB_MAX_OUTPUT_PORT_TYPE
+min[7] <= r_min[7].DB_MAX_OUTPUT_PORT_TYPE
+hour[0] <= r_hour[0].DB_MAX_OUTPUT_PORT_TYPE
+hour[1] <= r_hour[1].DB_MAX_OUTPUT_PORT_TYPE
+hour[2] <= r_hour[2].DB_MAX_OUTPUT_PORT_TYPE
+hour[3] <= r_hour[3].DB_MAX_OUTPUT_PORT_TYPE
+hour[4] <= r_hour[4].DB_MAX_OUTPUT_PORT_TYPE
+hour[5] <= r_hour[5].DB_MAX_OUTPUT_PORT_TYPE
+hour[6] <= r_hour[6].DB_MAX_OUTPUT_PORT_TYPE
+hour[7] <= r_hour[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|calendar:calendar_inst
+reset => year[0]~reg0.PRESET
+reset => year[1]~reg0.PRESET
+reset => year[2]~reg0.PRESET
+reset => year[3]~reg0.ACLR
+reset => year[4]~reg0.PRESET
+reset => year[5]~reg0.ACLR
+reset => year[6]~reg0.ACLR
+reset => year[7]~reg0.ACLR
+reset => month[0]~reg0.PRESET
+reset => month[1]~reg0.ACLR
+reset => month[2]~reg0.ACLR
+reset => month[3]~reg0.PRESET
+reset => month[4]~reg0.ACLR
+reset => month[5]~reg0.ACLR
+reset => month[6]~reg0.ACLR
+reset => month[7]~reg0.ACLR
+reset => day[0]~reg0.PRESET
+reset => day[1]~reg0.ACLR
+reset => day[2]~reg0.ACLR
+reset => day[3]~reg0.ACLR
+reset => day[4]~reg0.ACLR
+reset => day[5]~reg0.ACLR
+reset => day[6]~reg0.ACLR
+reset => day[7]~reg0.ACLR
+reset => day[7].IN0
+reset => month[7].IN0
+reset => year[7].IN0
+tick_1Hz => year[0]~reg0.CLK
+tick_1Hz => year[1]~reg0.CLK
+tick_1Hz => year[2]~reg0.CLK
+tick_1Hz => year[3]~reg0.CLK
+tick_1Hz => year[4]~reg0.CLK
+tick_1Hz => year[5]~reg0.CLK
+tick_1Hz => year[6]~reg0.CLK
+tick_1Hz => year[7]~reg0.CLK
+tick_1Hz => month[0]~reg0.CLK
+tick_1Hz => month[1]~reg0.CLK
+tick_1Hz => month[2]~reg0.CLK
+tick_1Hz => month[3]~reg0.CLK
+tick_1Hz => month[4]~reg0.CLK
+tick_1Hz => month[5]~reg0.CLK
+tick_1Hz => month[6]~reg0.CLK
+tick_1Hz => month[7]~reg0.CLK
+tick_1Hz => day[0]~reg0.CLK
+tick_1Hz => day[1]~reg0.CLK
+tick_1Hz => day[2]~reg0.CLK
+tick_1Hz => day[3]~reg0.CLK
+tick_1Hz => day[4]~reg0.CLK
+tick_1Hz => day[5]~reg0.CLK
+tick_1Hz => day[6]~reg0.CLK
+tick_1Hz => day[7]~reg0.CLK
+end_of_day => end_of_year.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => always1.IN1
+end_of_day => day[7]~reg0.ENA
+end_of_day => day[6]~reg0.ENA
+end_of_day => day[5]~reg0.ENA
+end_of_day => day[4]~reg0.ENA
+end_of_day => day[3]~reg0.ENA
+end_of_day => day[2]~reg0.ENA
+end_of_day => day[1]~reg0.ENA
+end_of_day => day[0]~reg0.ENA
+inc_day => day[7].IN1
+inc_month => month[7].IN1
+inc_year => year[7].IN1
+day[0] <= day[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[1] <= day[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[2] <= day[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[3] <= day[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[4] <= day[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[5] <= day[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[6] <= day[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+day[7] <= day[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[0] <= month[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[1] <= month[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[2] <= month[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[3] <= month[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[4] <= month[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[5] <= month[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[6] <= month[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+month[7] <= month[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[0] <= year[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[1] <= year[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[2] <= year[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[3] <= year[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[4] <= year[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[5] <= year[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[6] <= year[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+year[7] <= year[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|bin2bcd:bin2bcd_hex01
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan5.IN8
+bin[1] => Add5.IN8
+bin[1] => bcd.DATAA
+bin[2] => LessThan3.IN8
+bin[2] => Add3.IN8
+bin[2] => bcd.DATAA
+bin[3] => LessThan2.IN8
+bin[3] => Add2.IN8
+bin[3] => bcd.DATAA
+bin[4] => LessThan1.IN8
+bin[4] => Add1.IN8
+bin[4] => bcd.DATAA
+bin[5] => LessThan0.IN6
+bin[5] => Add0.IN6
+bin[5] => bcd.DATAA
+bin[6] => LessThan0.IN5
+bin[6] => Add0.IN5
+bin[6] => bcd.DATAA
+bin[7] => LessThan0.IN4
+bin[7] => Add0.IN4
+bin[7] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|bin2bcd:bin2bcd_hex23
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan5.IN8
+bin[1] => Add5.IN8
+bin[1] => bcd.DATAA
+bin[2] => LessThan3.IN8
+bin[2] => Add3.IN8
+bin[2] => bcd.DATAA
+bin[3] => LessThan2.IN8
+bin[3] => Add2.IN8
+bin[3] => bcd.DATAA
+bin[4] => LessThan1.IN8
+bin[4] => Add1.IN8
+bin[4] => bcd.DATAA
+bin[5] => LessThan0.IN6
+bin[5] => Add0.IN6
+bin[5] => bcd.DATAA
+bin[6] => LessThan0.IN5
+bin[6] => Add0.IN5
+bin[6] => bcd.DATAA
+bin[7] => LessThan0.IN4
+bin[7] => Add0.IN4
+bin[7] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|bin2bcd:bin2bcd_hex45
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan5.IN8
+bin[1] => Add5.IN8
+bin[1] => bcd.DATAA
+bin[2] => LessThan3.IN8
+bin[2] => Add3.IN8
+bin[2] => bcd.DATAA
+bin[3] => LessThan2.IN8
+bin[3] => Add2.IN8
+bin[3] => bcd.DATAA
+bin[4] => LessThan1.IN8
+bin[4] => Add1.IN8
+bin[4] => bcd.DATAA
+bin[5] => LessThan0.IN6
+bin[5] => Add0.IN6
+bin[5] => bcd.DATAA
+bin[6] => LessThan0.IN5
+bin[6] => Add0.IN5
+bin[6] => bcd.DATAA
+bin[7] => LessThan0.IN4
+bin[7] => Add0.IN4
+bin[7] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|bin2bcd:bin2bcd_hex67
+bin[0] => bcd[0].DATAIN
+bin[1] => LessThan5.IN8
+bin[1] => Add5.IN8
+bin[1] => bcd.DATAA
+bin[2] => LessThan3.IN8
+bin[2] => Add3.IN8
+bin[2] => bcd.DATAA
+bin[3] => LessThan2.IN8
+bin[3] => Add2.IN8
+bin[3] => bcd.DATAA
+bin[4] => LessThan1.IN8
+bin[4] => Add1.IN8
+bin[4] => bcd.DATAA
+bin[5] => LessThan0.IN6
+bin[5] => Add0.IN6
+bin[5] => bcd.DATAA
+bin[6] => LessThan0.IN5
+bin[6] => Add0.IN5
+bin[6] => bcd.DATAA
+bin[7] => LessThan0.IN4
+bin[7] => Add0.IN4
+bin[7] => bcd.DATAA
+bcd[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd[1] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[2] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[3] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[4] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[5] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[6] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+bcd[7] <= bcd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_0
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_1
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_2
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_3
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_4
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_5
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_6
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vericlock|seg7led:sec_7seg_7
+hex[0] => Decoder0.IN3
+hex[1] => Decoder0.IN2
+hex[2] => Decoder0.IN1
+hex[3] => Decoder0.IN0
+led_control[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+led_control[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+led_control[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+led_control[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+led_control[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+led_control[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+led_control[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

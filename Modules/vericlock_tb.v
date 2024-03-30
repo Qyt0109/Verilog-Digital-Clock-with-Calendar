@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
 module vericlock_tb ();
-  reg  clk_100MHz = 0;
-  reg  reset = 0;
-  reg  inc_sec = 0;
-  reg  inc_hour = 0;
-  reg  inc_min = 0;
+  reg clk_100MHz = 0;
+  reg reset = 0;
+  reg inc_sec = 0;
+  reg inc_hour = 0;
+  reg inc_min = 0;
   wire [13:0] sec_7seg, min_7seg, hour_7seg;
 
   reg inc_day = 0;
@@ -32,8 +32,8 @@ module vericlock_tb ();
   end
 
   initial begin
-    $dumpfile("./Simulate/vericlock.vcd");
-    $dumpvars;
+    // $dumpfile("./Simulate/vericlock.vcd");
+    // $dumpvars;
     reset = 1;
     #(CLK_PERIOD * 10);
     reset = 0;
