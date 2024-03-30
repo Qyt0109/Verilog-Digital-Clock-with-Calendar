@@ -232,6 +232,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "inc_hour_check",
+					"strict" : false
+				},
+				{
+					"name" : "inc_min_check",
+					"strict" : false
+				},
+				{
+					"name" : "inc_sec_check",
+					"strict" : false
+				},
+				{
+					"name" : "inc_day_check",
+					"strict" : false
+				},
+				{
+					"name" : "inc_month_check",
+					"strict" : false
+				},
+				{
+					"name" : "inc_year_check",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
@@ -240,11 +264,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "inc_2",
+					"name" : "inc_enable",
 					"strict" : false
 				},
 				{
-					"name" : "inc_enable",
+					"name" : "tick",
+					"strict" : false
+				},
+				{
+					"name" : "datetime",
 					"strict" : false
 				},
 				{
@@ -256,7 +284,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "datetime",
+					"name" : "inc_2",
 					"strict" : false
 				}
 			]

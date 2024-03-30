@@ -15,7 +15,7 @@ module timer1hz (
     if (reset) begin
       counter_1hz <= 0;
       r_clk_1Hz   <= 1'b0;
-    end else if (counter_1hz == MAX_COUNT) begin
+    end else if (counter_1hz == 50_000_000 / 2 - 1) begin
       counter_1hz <= 0;
       r_clk_1Hz = ~r_clk_1Hz;
     end else begin

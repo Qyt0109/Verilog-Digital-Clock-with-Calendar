@@ -28,34 +28,25 @@ module clock (
 
   // sec control
   // inc sec if tick or inc sec button pressed
-  always @(posedge tick_1Hz or posedge inc_sec or posedge reset) begin
-    if (reset) begin
-      r_sec <= DEFAULT_SEC_VALUE;
-    end else if (tick_1Hz) begin
-      r_sec <= (r_sec == 59) ? 0 : r_sec + 1;
-    end else if (inc_sec) begin
-      r_sec <= (r_sec == 59) ? 0 : r_sec + 1;
-    end
+  always @(posedge tick_1Hz or posedge reset) begin
+    if (reset) r_sec <= DEFAULT_SEC_VALUE;
+    else if (inc_sec) r_sec <= (r_sec == 59) ? 0 : r_sec + 1;
   end
 
   // min control
-  always @(posedge tick_1Hz or posedge inc_min or posedge reset) begin
+  always @(posedge tick_1Hz or posedge reset) begin
     if (reset) r_min <= DEFAULT_MIN_VALUE;
     // sec = 59 or inc min button pressed
-    else if (inc_min) begin
-      r_min <= (r_min == 59) ? 0 : r_min + 1;
-    end else if (r_sec == 59) begin
+    else if (inc_min | r_sec == 59) begin
       r_min <= (r_min == 59) ? 0 : r_min + 1;
     end
   end
 
   // hour control
-  always @(posedge tick_1Hz or posedge inc_hour or posedge reset) begin
+  always @(posedge tick_1Hz or posedge reset) begin
     if (reset) r_hour <= DEFAULT_HOUR_VALUE;
     // min:sec = 59:59 or inc hour button pressed
-    else if (inc_hour) begin
-      if (r_sec == 59) r_hour <= (r_hour == 23) ? 0 : r_hour + 1;
-    end else if ((r_min == 59) && (r_sec == 59)) begin
+    else if (inc_hour | ((r_min == 59) && (r_sec == 59))) begin
       r_hour <= (r_hour == 23) ? 0 : r_hour + 1;
     end
   end

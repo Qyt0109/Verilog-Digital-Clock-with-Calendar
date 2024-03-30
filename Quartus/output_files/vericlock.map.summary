@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Mar 30 06:29:54 2024
+Analysis & Synthesis Status : Successful - Sat Mar 30 09:40:10 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : vericlock
 Top-level Entity Name : vericlock
 Family : Cyclone IV E
-Total logic elements : 603
-    Total combinational functions : 585
-    Dedicated logic registers : 105
-Total registers : 105
-Total pins : 64
+Total logic elements : 451
+    Total combinational functions : 419
+    Dedicated logic registers : 113
+Total registers : 113
+Total pins : 71
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

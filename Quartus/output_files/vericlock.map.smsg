@@ -1,4 +1,4 @@
 Warning (10268): Verilog HDL information at timer1hz.v(14): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/timer1hz.v Line: 14
 Warning (10268): Verilog HDL information at calendar.v(30): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 30
-Warning (10268): Verilog HDL information at calendar.v(170): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 170
-Warning (10268): Verilog HDL information at calendar.v(196): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 196
+Warning (10268): Verilog HDL information at calendar.v(104): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 104
+Warning (10268): Verilog HDL information at calendar.v(130): always construct contains both blocking and non-blocking assignments File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 130

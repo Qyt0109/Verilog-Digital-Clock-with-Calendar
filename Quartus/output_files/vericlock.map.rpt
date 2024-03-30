@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vericlock
-Sat Mar 30 06:29:54 2024
+Sat Mar 30 09:40:10 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -14,22 +14,21 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: debounce:debounce_datetime
- 11. Parameter Settings for User Entity Instance: debounce:debounce_inc_enable
- 12. Parameter Settings for User Entity Instance: debounce:debounce_inc_sec
- 13. Parameter Settings for User Entity Instance: debounce:debounce_inc_min
- 14. Parameter Settings for User Entity Instance: debounce:debounce_inc_hour
- 15. Parameter Settings for User Entity Instance: debounce:debounce_inc_day
- 16. Parameter Settings for User Entity Instance: debounce:debounce_inc_month
- 17. Parameter Settings for User Entity Instance: debounce:debounce_inc_year
- 18. Parameter Settings for User Entity Instance: timer1hz:timer
- 19. Parameter Settings for User Entity Instance: clock:clock_inst
- 20. Parameter Settings for User Entity Instance: calendar:calendar_inst
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: debounce:debounce_datetime
+ 12. Parameter Settings for User Entity Instance: debounce:debounce_inc_enable
+ 13. Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_0
+ 14. Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_1
+ 15. Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_2
+ 16. Parameter Settings for User Entity Instance: debounce:debounce_inc_tick
+ 17. Parameter Settings for User Entity Instance: timer1hz:timer
+ 18. Parameter Settings for User Entity Instance: clock:clock_inst
+ 19. Parameter Settings for User Entity Instance: calendar:calendar_inst
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -56,16 +55,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 30 06:29:54 2024          ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 30 09:40:10 2024          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; vericlock                                      ;
 ; Top-level Entity Name              ; vericlock                                      ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 603                                            ;
-;     Total combinational functions  ; 585                                            ;
-;     Dedicated logic registers      ; 105                                            ;
-; Total registers                    ; 105                                            ;
-; Total pins                         ; 64                                             ;
+; Total logic elements               ; 451                                            ;
+;     Total combinational functions  ; 419                                            ;
+;     Dedicated logic registers      ; 113                                            ;
+; Total registers                    ; 113                                            ;
+; Total pins                         ; 71                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -172,7 +171,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -197,30 +196,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 603         ;
+; Estimated Total logic elements              ; 451         ;
 ;                                             ;             ;
-; Total combinational functions               ; 585         ;
+; Total combinational functions               ; 419         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 317         ;
-;     -- 3 input functions                    ; 43          ;
-;     -- <=2 input functions                  ; 225         ;
+;     -- 4 input functions                    ; 221         ;
+;     -- 3 input functions                    ; 59          ;
+;     -- <=2 input functions                  ; 139         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 512         ;
+;     -- normal mode                          ; 346         ;
 ;     -- arithmetic mode                      ; 73          ;
 ;                                             ;             ;
-; Total registers                             ; 105         ;
-;     -- Dedicated logic registers            ; 105         ;
+; Total registers                             ; 113         ;
+;     -- Dedicated logic registers            ; 113         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 64          ;
+; I/O pins                                    ; 71          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 141         ;
-; Total fan-out                               ; 2284        ;
-; Average fan-out                             ; 2.79        ;
+; Maximum fan-out                             ; 81          ;
+; Total fan-out                               ; 1814        ;
+; Average fan-out                             ; 2.69        ;
 +---------------------------------------------+-------------+
 
 
@@ -229,29 +228,27 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
-; |vericlock                        ; 585 (31)            ; 105 (0)                   ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |vericlock                              ; vericlock   ; work         ;
+; |vericlock                        ; 419 (30)            ; 113 (0)                   ; 0           ; 0            ; 0       ; 0         ; 71   ; 0            ; |vericlock                              ; vericlock   ; work         ;
 ;    |bin2bcd:bin2bcd_hex01|        ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|bin2bcd:bin2bcd_hex01        ; bin2bcd     ; work         ;
 ;    |bin2bcd:bin2bcd_hex23|        ; 23 (23)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|bin2bcd:bin2bcd_hex23        ; bin2bcd     ; work         ;
 ;    |bin2bcd:bin2bcd_hex45|        ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|bin2bcd:bin2bcd_hex45        ; bin2bcd     ; work         ;
-;    |bin2bcd:bin2bcd_hex67|        ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|bin2bcd:bin2bcd_hex67        ; bin2bcd     ; work         ;
-;    |calendar:calendar_inst|       ; 189 (189)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|calendar:calendar_inst       ; calendar    ; work         ;
-;    |clock:clock_inst|             ; 150 (150)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|clock:clock_inst             ; clock       ; work         ;
+;    |bin2bcd:bin2bcd_hex67|        ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|bin2bcd:bin2bcd_hex67        ; bin2bcd     ; work         ;
+;    |calendar:calendar_inst|       ; 107 (107)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|calendar:calendar_inst       ; calendar    ; work         ;
+;    |clock:clock_inst|             ; 45 (45)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|clock:clock_inst             ; clock       ; work         ;
 ;    |debounce:debounce_datetime|   ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_datetime   ; debounce    ; work         ;
-;    |debounce:debounce_inc_day|    ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_day    ; debounce    ; work         ;
 ;    |debounce:debounce_inc_enable| ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_enable ; debounce    ; work         ;
-;    |debounce:debounce_inc_hour|   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_hour   ; debounce    ; work         ;
-;    |debounce:debounce_inc_min|    ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_min    ; debounce    ; work         ;
-;    |debounce:debounce_inc_month|  ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_month  ; debounce    ; work         ;
-;    |debounce:debounce_inc_sec|    ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_sec    ; debounce    ; work         ;
-;    |debounce:debounce_inc_year|   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_year   ; debounce    ; work         ;
+;    |debounce:debounce_inc_inc_0|  ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_inc_0  ; debounce    ; work         ;
+;    |debounce:debounce_inc_inc_1|  ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_inc_1  ; debounce    ; work         ;
+;    |debounce:debounce_inc_inc_2|  ; 0 (0)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_inc_2  ; debounce    ; work         ;
+;    |debounce:debounce_inc_tick|   ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|debounce:debounce_inc_tick   ; debounce    ; work         ;
 ;    |seg7led:sec_7seg_0|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_0           ; seg7led     ; work         ;
 ;    |seg7led:sec_7seg_1|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_1           ; seg7led     ; work         ;
 ;    |seg7led:sec_7seg_2|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_2           ; seg7led     ; work         ;
 ;    |seg7led:sec_7seg_3|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_3           ; seg7led     ; work         ;
 ;    |seg7led:sec_7seg_4|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_4           ; seg7led     ; work         ;
 ;    |seg7led:sec_7seg_5|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_5           ; seg7led     ; work         ;
-;    |seg7led:sec_7seg_6|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_6           ; seg7led     ; work         ;
-;    |seg7led:sec_7seg_7|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_7           ; seg7led     ; work         ;
+;    |seg7led:sec_7seg_6|           ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_6           ; seg7led     ; work         ;
+;    |seg7led:sec_7seg_7|           ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|seg7led:sec_7seg_7           ; seg7led     ; work         ;
 ;    |timer1hz:timer|               ; 56 (56)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vericlock|timer1hz:timer               ; timer1hz    ; work         ;
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -262,25 +259,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 105   ;
+; Total registers                              ; 113   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 81    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 40    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |vericlock|calendar:calendar_inst|month[5]  ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; Yes        ; |vericlock|calendar:calendar_inst|month[3]  ;
-; 250:1              ; 8 bits    ; 1328 LEs      ; 8 LEs                ; 1320 LEs               ; No         ; |vericlock|calendar:calendar_inst|Selector2 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; calendar:calendar_inst|day[0]          ; 8       ;
+; calendar:calendar_inst|month[3]        ; 17      ;
+; calendar:calendar_inst|month[0]        ; 14      ;
+; calendar:calendar_inst|year[4]         ; 6       ;
+; calendar:calendar_inst|year[2]         ; 4       ;
+; calendar:calendar_inst|year[1]         ; 5       ;
+; calendar:calendar_inst|year[0]         ; 6       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |vericlock|calendar:calendar_inst|month[7] ;
+; 250:1              ; 7 bits    ; 1162 LEs      ; 7 LEs                ; 1155 LEs               ; Yes        ; |vericlock|calendar:calendar_inst|day[4]   ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |vericlock|calendar:calendar_inst|month[2] ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |vericlock|calendar:calendar_inst|month[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -303,58 +317,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_sec ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; DELAY          ; 1     ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_min ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; DELAY          ; 1     ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_hour ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; DELAY          ; 1     ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_day ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; DELAY          ; 1     ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_0 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; DELAY          ; 5     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_month ;
+; Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_1 ;
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
-; DELAY          ; 1     ; Signed Integer                                  ;
+; DELAY          ; 5     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debounce:debounce_inc_inc_2 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; DELAY          ; 5     ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debounce:debounce_inc_year ;
+; Parameter Settings for User Entity Instance: debounce:debounce_inc_tick ;
 +----------------+-------+------------------------------------------------+
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
@@ -402,22 +396,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 64                          ;
-; cycloneiii_ff         ; 105                         ;
-;     CLR               ; 49                          ;
-;     ENA CLR           ; 32                          ;
-;     plain             ; 24                          ;
-; cycloneiii_lcell_comb ; 601                         ;
+; boundary_port         ; 71                          ;
+; cycloneiii_ff         ; 113                         ;
+;     CLR               ; 39                          ;
+;     CLR SLD           ; 2                           ;
+;     ENA CLR           ; 40                          ;
+;     plain             ; 32                          ;
+; cycloneiii_lcell_comb ; 436                         ;
 ;     arith             ; 73                          ;
 ;         2 data inputs ; 73                          ;
-;     normal            ; 528                         ;
-;         1 data inputs ; 23                          ;
-;         2 data inputs ; 145                         ;
-;         3 data inputs ; 43                          ;
-;         4 data inputs ; 317                         ;
+;     normal            ; 363                         ;
+;         1 data inputs ; 27                          ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 59                          ;
+;         4 data inputs ; 221                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.93                        ;
+; Average LUT depth     ; 5.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -426,7 +421,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -436,7 +431,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sat Mar 30 06:29:22 2024
+    Info: Processing started: Sat Mar 30 09:39:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vericlock -c vericlock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -455,30 +450,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file //mac/a
 Info (12021): Found 1 design units, including 1 entities, in source file //mac/allfiles/applications/codestuff/edabk_clock/modules/bin2bcd.v
     Info (12023): Found entity 1: bin2bcd File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd.v Line: 1
 Info (12127): Elaborating entity "vericlock" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at vericlock.v(43): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 43
-Warning (10230): Verilog HDL assignment warning at vericlock.v(44): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 44
-Warning (10230): Verilog HDL assignment warning at vericlock.v(45): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 45
-Warning (10230): Verilog HDL assignment warning at vericlock.v(47): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 47
-Warning (10230): Verilog HDL assignment warning at vericlock.v(48): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 48
-Warning (10230): Verilog HDL assignment warning at vericlock.v(49): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 49
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_datetime" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 60
-Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_inc_sec" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 72
-Info (12128): Elaborating entity "timer1hz" for hierarchy "timer1hz:timer" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 106
-Info (12128): Elaborating entity "clock" for hierarchy "clock:clock_inst" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 127
+Warning (10230): Verilog HDL assignment warning at vericlock.v(50): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 50
+Warning (10230): Verilog HDL assignment warning at vericlock.v(51): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 51
+Warning (10230): Verilog HDL assignment warning at vericlock.v(52): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 52
+Warning (10230): Verilog HDL assignment warning at vericlock.v(54): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 54
+Warning (10230): Verilog HDL assignment warning at vericlock.v(55): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 55
+Warning (10230): Verilog HDL assignment warning at vericlock.v(56): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 56
+Warning (10230): Verilog HDL assignment warning at vericlock.v(160): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 160
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_datetime" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 74
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_inc_tick" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 101
+Info (12128): Elaborating entity "timer1hz" for hierarchy "timer1hz:timer" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 111
+Info (12128): Elaborating entity "clock" for hierarchy "clock:clock_inst" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 132
 Warning (10230): Verilog HDL assignment warning at clock.v(21): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 21
 Warning (10230): Verilog HDL assignment warning at clock.v(22): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 22
 Warning (10230): Verilog HDL assignment warning at clock.v(23): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 23
+Warning (10230): Verilog HDL assignment warning at clock.v(32): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 32
 Warning (10230): Verilog HDL assignment warning at clock.v(33): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 33
-Warning (10230): Verilog HDL assignment warning at clock.v(35): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 35
-Warning (10230): Verilog HDL assignment warning at clock.v(37): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 37
-Warning (10230): Verilog HDL assignment warning at clock.v(43): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 43
-Warning (10230): Verilog HDL assignment warning at clock.v(46): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 46
-Warning (10230): Verilog HDL assignment warning at clock.v(48): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 48
-Warning (10230): Verilog HDL assignment warning at clock.v(54): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 54
-Warning (10230): Verilog HDL assignment warning at clock.v(57): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 57
-Warning (10230): Verilog HDL assignment warning at clock.v(59): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 59
-Warning (10230): Verilog HDL assignment warning at clock.v(63): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 63
-Info (12128): Elaborating entity "calendar" for hierarchy "calendar:calendar_inst" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 144
+Warning (10230): Verilog HDL assignment warning at clock.v(38): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 38
+Warning (10230): Verilog HDL assignment warning at clock.v(41): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 41
+Warning (10230): Verilog HDL assignment warning at clock.v(47): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
+Warning (10230): Verilog HDL assignment warning at clock.v(50): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 50
+Warning (10230): Verilog HDL assignment warning at clock.v(54): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 54
+Info (12128): Elaborating entity "calendar" for hierarchy "calendar:calendar_inst" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 149
 Warning (10230): Verilog HDL assignment warning at calendar.v(24): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 24
 Warning (10230): Verilog HDL assignment warning at calendar.v(27): truncated value with size 32 to match size of target (1) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 27
 Warning (10230): Verilog HDL assignment warning at calendar.v(32): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 32
@@ -494,91 +487,31 @@ Warning (10230): Verilog HDL assignment warning at calendar.v(80): truncated val
 Warning (10230): Verilog HDL assignment warning at calendar.v(85): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 85
 Warning (10230): Verilog HDL assignment warning at calendar.v(90): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 90
 Warning (10230): Verilog HDL assignment warning at calendar.v(95): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 95
-Warning (10230): Verilog HDL assignment warning at calendar.v(104): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 104
-Warning (10230): Verilog HDL assignment warning at calendar.v(111): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 111
-Warning (10230): Verilog HDL assignment warning at calendar.v(116): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 116
-Warning (10230): Verilog HDL assignment warning at calendar.v(121): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 121
-Warning (10230): Verilog HDL assignment warning at calendar.v(126): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 126
-Warning (10230): Verilog HDL assignment warning at calendar.v(131): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 131
-Warning (10230): Verilog HDL assignment warning at calendar.v(136): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 136
-Warning (10230): Verilog HDL assignment warning at calendar.v(141): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 141
-Warning (10230): Verilog HDL assignment warning at calendar.v(146): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 146
-Warning (10230): Verilog HDL assignment warning at calendar.v(151): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 151
-Warning (10230): Verilog HDL assignment warning at calendar.v(156): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 156
-Warning (10230): Verilog HDL assignment warning at calendar.v(161): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 161
-Warning (10230): Verilog HDL assignment warning at calendar.v(172): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 172
-Warning (10230): Verilog HDL assignment warning at calendar.v(176): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 176
-Warning (10230): Verilog HDL assignment warning at calendar.v(198): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 198
-Warning (10230): Verilog HDL assignment warning at calendar.v(201): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 201
-Warning (10230): Verilog HDL assignment warning at calendar.v(203): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 203
-Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:bin2bcd_hex01" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 161
+Warning (10230): Verilog HDL assignment warning at calendar.v(106): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 106
+Warning (10230): Verilog HDL assignment warning at calendar.v(110): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 110
+Warning (10230): Verilog HDL assignment warning at calendar.v(132): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 132
+Warning (10230): Verilog HDL assignment warning at calendar.v(135): truncated value with size 32 to match size of target (8) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 135
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:bin2bcd_hex01" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 166
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(10): truncated value with size 32 to match size of target (4) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd.v Line: 10
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(11): truncated value with size 32 to match size of target (4) File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/bin2bcd.v Line: 11
-Info (12128): Elaborating entity "seg7led" for hierarchy "seg7led:sec_7seg_0" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 179
+Info (12128): Elaborating entity "seg7led" for hierarchy "seg7led:sec_7seg_0" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 186
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer tick_1Hz File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 100
-Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "calendar:calendar_inst|day[3]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[3]~_emulated" and latch "calendar:calendar_inst|day[3]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[3]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[3]~_emulated" and latch "clock:clock_inst|r_hour[3]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[4]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[4]~_emulated" and latch "calendar:calendar_inst|day[4]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[4]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[4]~_emulated" and latch "clock:clock_inst|r_hour[4]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[7]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[7]~_emulated" and latch "calendar:calendar_inst|day[7]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[7]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[7]~_emulated" and latch "clock:clock_inst|r_hour[7]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[5]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[5]~_emulated" and latch "calendar:calendar_inst|day[5]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[5]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[5]~_emulated" and latch "clock:clock_inst|r_hour[5]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[6]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[6]~_emulated" and latch "calendar:calendar_inst|day[6]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[6]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[6]~_emulated" and latch "clock:clock_inst|r_hour[6]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[2]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[2]~_emulated" and latch "calendar:calendar_inst|day[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[2]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[2]~_emulated" and latch "clock:clock_inst|r_hour[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[1]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[1]~_emulated" and latch "calendar:calendar_inst|day[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[1]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[1]~_emulated" and latch "clock:clock_inst|r_hour[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|day[0]" is converted into an equivalent circuit using register "calendar:calendar_inst|day[0]~_emulated" and latch "calendar:calendar_inst|day[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 100
-    Warning (13310): Register "clock:clock_inst|r_hour[0]" is converted into an equivalent circuit using register "clock:clock_inst|r_hour[0]~_emulated" and latch "clock:clock_inst|r_hour[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 58
-    Warning (13310): Register "calendar:calendar_inst|month[3]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[3]~_emulated" and latch "calendar:calendar_inst|month[3]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[3]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[3]~_emulated" and latch "clock:clock_inst|r_min[3]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[4]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[4]~_emulated" and latch "calendar:calendar_inst|month[4]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[4]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[4]~_emulated" and latch "clock:clock_inst|r_min[4]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[7]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[7]~_emulated" and latch "calendar:calendar_inst|month[7]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[7]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[7]~_emulated" and latch "clock:clock_inst|r_min[7]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[5]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[5]~_emulated" and latch "calendar:calendar_inst|month[5]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[5]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[5]~_emulated" and latch "clock:clock_inst|r_min[5]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[6]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[6]~_emulated" and latch "calendar:calendar_inst|month[6]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[6]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[6]~_emulated" and latch "clock:clock_inst|r_min[6]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[2]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[2]~_emulated" and latch "calendar:calendar_inst|month[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[2]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[2]~_emulated" and latch "clock:clock_inst|r_min[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[1]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[1]~_emulated" and latch "calendar:calendar_inst|month[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[1]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[1]~_emulated" and latch "clock:clock_inst|r_min[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "calendar:calendar_inst|month[0]" is converted into an equivalent circuit using register "calendar:calendar_inst|month[0]~_emulated" and latch "calendar:calendar_inst|month[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 178
-    Warning (13310): Register "clock:clock_inst|r_min[0]" is converted into an equivalent circuit using register "clock:clock_inst|r_min[0]~_emulated" and latch "clock:clock_inst|r_min[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 47
-    Warning (13310): Register "clock:clock_inst|r_sec[7]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[7]~_emulated" and latch "clock:clock_inst|r_sec[7]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[6]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[6]~_emulated" and latch "clock:clock_inst|r_sec[6]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[5]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[5]~_emulated" and latch "clock:clock_inst|r_sec[5]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[4]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[4]~_emulated" and latch "clock:clock_inst|r_sec[4]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[3]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[3]~_emulated" and latch "clock:clock_inst|r_sec[3]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[2]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[2]~_emulated" and latch "clock:clock_inst|r_sec[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[1]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[1]~_emulated" and latch "clock:clock_inst|r_sec[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "clock:clock_inst|r_sec[0]" is converted into an equivalent circuit using register "clock:clock_inst|r_sec[0]~_emulated" and latch "clock:clock_inst|r_sec[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/clock.v Line: 36
-    Warning (13310): Register "calendar:calendar_inst|year[6]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[6]~_emulated" and latch "calendar:calendar_inst|year[6]~1" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[5]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[5]~_emulated" and latch "calendar:calendar_inst|year[5]~6" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[7]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[7]~_emulated" and latch "calendar:calendar_inst|year[7]~11" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[4]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[4]~_emulated" and latch "calendar:calendar_inst|year[4]~16" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[3]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[3]~_emulated" and latch "calendar:calendar_inst|year[3]~21" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[2]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[2]~_emulated" and latch "calendar:calendar_inst|year[2]~26" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[1]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[1]~_emulated" and latch "calendar:calendar_inst|year[1]~31" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
-    Warning (13310): Register "calendar:calendar_inst|year[0]" is converted into an equivalent circuit using register "calendar:calendar_inst|year[0]~_emulated" and latch "calendar:calendar_inst|year[0]~36" File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 202
+    Warning (19017): Found clock multiplexer tick_1Hz File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/vericlock.v Line: 104
+Info (13000): Registers with preset signals will power-up high File: //mac/AllFiles/Applications/CODESTUFF/EDABK_Clock/Modules/calendar.v Line: 34
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /Applications/CODESTUFF/EDABK_Clock/Quartus/output_files/vericlock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 668 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 604 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
-    Info: Peak virtual memory: 13275 megabytes
-    Info: Processing ended: Sat Mar 30 06:29:54 2024
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:49
+Info (21057): Implemented 522 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 63 output pins
+    Info (21061): Implemented 451 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 13254 megabytes
+    Info: Processing ended: Sat Mar 30 09:40:10 2024
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:46
 
 
 +------------------------------------------+

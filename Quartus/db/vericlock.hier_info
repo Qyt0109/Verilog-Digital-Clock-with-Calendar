@@ -1,73 +1,77 @@
 |vericlock
-clk_100MHz => clk_100MHz.IN9
+clk_100MHz => clk_100MHz.IN7
 reset => _.IN1
 reset => _.IN1
 reset => _.IN1
 datetime => datetime.IN1
 inc_enable => inc_enable.IN1
-inc_0 => inc_hour.DATAB
-inc_0 => inc_day.DATAB
-inc_1 => inc_min.DATAB
-inc_1 => inc_month.DATAB
-inc_2 => inc_sec.DATAB
-inc_2 => inc_year.DATAB
-seg7_0[0] << seg7led:sec_7seg_0.led_control
-seg7_0[1] << seg7led:sec_7seg_0.led_control
-seg7_0[2] << seg7led:sec_7seg_0.led_control
-seg7_0[3] << seg7led:sec_7seg_0.led_control
-seg7_0[4] << seg7led:sec_7seg_0.led_control
-seg7_0[5] << seg7led:sec_7seg_0.led_control
-seg7_0[6] << seg7led:sec_7seg_0.led_control
-seg7_1[0] << seg7led:sec_7seg_1.led_control
-seg7_1[1] << seg7led:sec_7seg_1.led_control
-seg7_1[2] << seg7led:sec_7seg_1.led_control
-seg7_1[3] << seg7led:sec_7seg_1.led_control
-seg7_1[4] << seg7led:sec_7seg_1.led_control
-seg7_1[5] << seg7led:sec_7seg_1.led_control
-seg7_1[6] << seg7led:sec_7seg_1.led_control
-seg7_2[0] << seg7led:sec_7seg_2.led_control
-seg7_2[1] << seg7led:sec_7seg_2.led_control
-seg7_2[2] << seg7led:sec_7seg_2.led_control
-seg7_2[3] << seg7led:sec_7seg_2.led_control
-seg7_2[4] << seg7led:sec_7seg_2.led_control
-seg7_2[5] << seg7led:sec_7seg_2.led_control
-seg7_2[6] << seg7led:sec_7seg_2.led_control
-seg7_3[0] << seg7led:sec_7seg_3.led_control
-seg7_3[1] << seg7led:sec_7seg_3.led_control
-seg7_3[2] << seg7led:sec_7seg_3.led_control
-seg7_3[3] << seg7led:sec_7seg_3.led_control
-seg7_3[4] << seg7led:sec_7seg_3.led_control
-seg7_3[5] << seg7led:sec_7seg_3.led_control
-seg7_3[6] << seg7led:sec_7seg_3.led_control
-seg7_4[0] << seg7led:sec_7seg_4.led_control
-seg7_4[1] << seg7led:sec_7seg_4.led_control
-seg7_4[2] << seg7led:sec_7seg_4.led_control
-seg7_4[3] << seg7led:sec_7seg_4.led_control
-seg7_4[4] << seg7led:sec_7seg_4.led_control
-seg7_4[5] << seg7led:sec_7seg_4.led_control
-seg7_4[6] << seg7led:sec_7seg_4.led_control
-seg7_5[0] << seg7led:sec_7seg_5.led_control
-seg7_5[1] << seg7led:sec_7seg_5.led_control
-seg7_5[2] << seg7led:sec_7seg_5.led_control
-seg7_5[3] << seg7led:sec_7seg_5.led_control
-seg7_5[4] << seg7led:sec_7seg_5.led_control
-seg7_5[5] << seg7led:sec_7seg_5.led_control
-seg7_5[6] << seg7led:sec_7seg_5.led_control
-seg7_6[0] << seg7led:sec_7seg_6.led_control
-seg7_6[1] << seg7led:sec_7seg_6.led_control
-seg7_6[2] << seg7led:sec_7seg_6.led_control
-seg7_6[3] << seg7led:sec_7seg_6.led_control
-seg7_6[4] << seg7led:sec_7seg_6.led_control
-seg7_6[5] << seg7led:sec_7seg_6.led_control
-seg7_6[6] << seg7led:sec_7seg_6.led_control
-seg7_7[0] << seg7led:sec_7seg_7.led_control
-seg7_7[1] << seg7led:sec_7seg_7.led_control
-seg7_7[2] << seg7led:sec_7seg_7.led_control
-seg7_7[3] << seg7led:sec_7seg_7.led_control
-seg7_7[4] << seg7led:sec_7seg_7.led_control
-seg7_7[5] << seg7led:sec_7seg_7.led_control
-seg7_7[6] << seg7led:sec_7seg_7.led_control
-tick_1Hz_check << tick_1Hz.DB_MAX_OUTPUT_PORT_TYPE
+inc_0 => inc_0.IN1
+inc_1 => inc_1.IN1
+inc_2 => inc_2.IN1
+tick => tick.IN1
+seg7_0[0] <= seg7led:sec_7seg_0.led_control
+seg7_0[1] <= seg7led:sec_7seg_0.led_control
+seg7_0[2] <= seg7led:sec_7seg_0.led_control
+seg7_0[3] <= seg7led:sec_7seg_0.led_control
+seg7_0[4] <= seg7led:sec_7seg_0.led_control
+seg7_0[5] <= seg7led:sec_7seg_0.led_control
+seg7_0[6] <= seg7led:sec_7seg_0.led_control
+seg7_1[0] <= seg7led:sec_7seg_1.led_control
+seg7_1[1] <= seg7led:sec_7seg_1.led_control
+seg7_1[2] <= seg7led:sec_7seg_1.led_control
+seg7_1[3] <= seg7led:sec_7seg_1.led_control
+seg7_1[4] <= seg7led:sec_7seg_1.led_control
+seg7_1[5] <= seg7led:sec_7seg_1.led_control
+seg7_1[6] <= seg7led:sec_7seg_1.led_control
+seg7_2[0] <= seg7led:sec_7seg_2.led_control
+seg7_2[1] <= seg7led:sec_7seg_2.led_control
+seg7_2[2] <= seg7led:sec_7seg_2.led_control
+seg7_2[3] <= seg7led:sec_7seg_2.led_control
+seg7_2[4] <= seg7led:sec_7seg_2.led_control
+seg7_2[5] <= seg7led:sec_7seg_2.led_control
+seg7_2[6] <= seg7led:sec_7seg_2.led_control
+seg7_3[0] <= seg7led:sec_7seg_3.led_control
+seg7_3[1] <= seg7led:sec_7seg_3.led_control
+seg7_3[2] <= seg7led:sec_7seg_3.led_control
+seg7_3[3] <= seg7led:sec_7seg_3.led_control
+seg7_3[4] <= seg7led:sec_7seg_3.led_control
+seg7_3[5] <= seg7led:sec_7seg_3.led_control
+seg7_3[6] <= seg7led:sec_7seg_3.led_control
+seg7_4[0] <= seg7led:sec_7seg_4.led_control
+seg7_4[1] <= seg7led:sec_7seg_4.led_control
+seg7_4[2] <= seg7led:sec_7seg_4.led_control
+seg7_4[3] <= seg7led:sec_7seg_4.led_control
+seg7_4[4] <= seg7led:sec_7seg_4.led_control
+seg7_4[5] <= seg7led:sec_7seg_4.led_control
+seg7_4[6] <= seg7led:sec_7seg_4.led_control
+seg7_5[0] <= seg7led:sec_7seg_5.led_control
+seg7_5[1] <= seg7led:sec_7seg_5.led_control
+seg7_5[2] <= seg7led:sec_7seg_5.led_control
+seg7_5[3] <= seg7led:sec_7seg_5.led_control
+seg7_5[4] <= seg7led:sec_7seg_5.led_control
+seg7_5[5] <= seg7led:sec_7seg_5.led_control
+seg7_5[6] <= seg7led:sec_7seg_5.led_control
+seg7_6[0] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[1] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[2] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[3] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[4] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[5] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_6[6] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[0] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[1] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[2] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[3] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[4] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[5] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+seg7_7[6] <= concat.DB_MAX_OUTPUT_PORT_TYPE
+tick_1Hz_check <= tick_1Hz.DB_MAX_OUTPUT_PORT_TYPE
+inc_hour_check <= inc_hour.DB_MAX_OUTPUT_PORT_TYPE
+inc_min_check <= inc_min.DB_MAX_OUTPUT_PORT_TYPE
+inc_sec_check <= inc_sec.DB_MAX_OUTPUT_PORT_TYPE
+inc_day_check <= inc_day.DB_MAX_OUTPUT_PORT_TYPE
+inc_month_check <= inc_month.DB_MAX_OUTPUT_PORT_TYPE
+inc_year_check <= inc_year.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |vericlock|debounce:debounce_datetime
@@ -92,42 +96,40 @@ signal => delayed_signal[0].DATAIN
 debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vericlock|debounce:debounce_inc_sec
+|vericlock|debounce:debounce_inc_inc_0
 clk => delayed_signal[0].CLK
 clk => delayed_signal[1].CLK
+clk => delayed_signal[2].CLK
+clk => delayed_signal[3].CLK
+clk => delayed_signal[4].CLK
+clk => delayed_signal[5].CLK
 signal => delayed_signal[0].DATAIN
-debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vericlock|debounce:debounce_inc_min
+|vericlock|debounce:debounce_inc_inc_1
 clk => delayed_signal[0].CLK
 clk => delayed_signal[1].CLK
+clk => delayed_signal[2].CLK
+clk => delayed_signal[3].CLK
+clk => delayed_signal[4].CLK
+clk => delayed_signal[5].CLK
 signal => delayed_signal[0].DATAIN
-debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vericlock|debounce:debounce_inc_hour
+|vericlock|debounce:debounce_inc_inc_2
 clk => delayed_signal[0].CLK
 clk => delayed_signal[1].CLK
+clk => delayed_signal[2].CLK
+clk => delayed_signal[3].CLK
+clk => delayed_signal[4].CLK
+clk => delayed_signal[5].CLK
 signal => delayed_signal[0].DATAIN
-debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
+debounced_signal <= delayed_signal[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vericlock|debounce:debounce_inc_day
-clk => delayed_signal[0].CLK
-clk => delayed_signal[1].CLK
-signal => delayed_signal[0].DATAIN
-debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vericlock|debounce:debounce_inc_month
-clk => delayed_signal[0].CLK
-clk => delayed_signal[1].CLK
-signal => delayed_signal[0].DATAIN
-debounced_signal <= delayed_signal[1].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|vericlock|debounce:debounce_inc_year
+|vericlock|debounce:debounce_inc_tick
 clk => delayed_signal[0].CLK
 clk => delayed_signal[1].CLK
 signal => delayed_signal[0].DATAIN
@@ -229,9 +231,6 @@ reset => r_sec[4].ACLR
 reset => r_sec[5].ACLR
 reset => r_sec[6].ACLR
 reset => r_sec[7].ACLR
-reset => r_sec[7].IN0
-reset => r_min[7].IN0
-reset => r_hour[7].IN0
 tick_1Hz => r_hour[0].CLK
 tick_1Hz => r_hour[1].CLK
 tick_1Hz => r_hour[2].CLK
@@ -248,17 +247,24 @@ tick_1Hz => r_min[4].CLK
 tick_1Hz => r_min[5].CLK
 tick_1Hz => r_min[6].CLK
 tick_1Hz => r_min[7].CLK
-tick_1Hz => r_sec[7].IN1
-inc_sec => r_sec[0].CLK
-inc_sec => r_sec[1].CLK
-inc_sec => r_sec[2].CLK
-inc_sec => r_sec[3].CLK
-inc_sec => r_sec[4].CLK
-inc_sec => r_sec[5].CLK
-inc_sec => r_sec[6].CLK
-inc_sec => r_sec[7].CLK
-inc_hour => r_hour[7].IN1
-inc_min => r_min[7].IN1
+tick_1Hz => r_sec[0].CLK
+tick_1Hz => r_sec[1].CLK
+tick_1Hz => r_sec[2].CLK
+tick_1Hz => r_sec[3].CLK
+tick_1Hz => r_sec[4].CLK
+tick_1Hz => r_sec[5].CLK
+tick_1Hz => r_sec[6].CLK
+tick_1Hz => r_sec[7].CLK
+inc_sec => r_sec[7].ENA
+inc_sec => r_sec[6].ENA
+inc_sec => r_sec[5].ENA
+inc_sec => r_sec[4].ENA
+inc_sec => r_sec[3].ENA
+inc_sec => r_sec[2].ENA
+inc_sec => r_sec[1].ENA
+inc_sec => r_sec[0].ENA
+inc_hour => always2.IN1
+inc_min => always1.IN1
 end_of_day <= end_of_day.DB_MAX_OUTPUT_PORT_TYPE
 sec[0] <= r_sec[0].DB_MAX_OUTPUT_PORT_TYPE
 sec[1] <= r_sec[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -311,9 +317,6 @@ reset => day[4]~reg0.ACLR
 reset => day[5]~reg0.ACLR
 reset => day[6]~reg0.ACLR
 reset => day[7]~reg0.ACLR
-reset => day[7].IN0
-reset => month[7].IN0
-reset => year[7].IN0
 tick_1Hz => year[0]~reg0.CLK
 tick_1Hz => year[1]~reg0.CLK
 tick_1Hz => year[2]~reg0.CLK
@@ -339,6 +342,7 @@ tick_1Hz => day[5]~reg0.CLK
 tick_1Hz => day[6]~reg0.CLK
 tick_1Hz => day[7]~reg0.CLK
 end_of_day => end_of_year.IN1
+end_of_day => always0.IN0
 end_of_day => always1.IN1
 end_of_day => always1.IN1
 end_of_day => always1.IN1
@@ -352,17 +356,16 @@ end_of_day => always1.IN1
 end_of_day => always1.IN1
 end_of_day => always1.IN1
 end_of_day => always1.IN1
-end_of_day => day[7]~reg0.ENA
-end_of_day => day[6]~reg0.ENA
-end_of_day => day[5]~reg0.ENA
-end_of_day => day[4]~reg0.ENA
-end_of_day => day[3]~reg0.ENA
-end_of_day => day[2]~reg0.ENA
-end_of_day => day[1]~reg0.ENA
-end_of_day => day[0]~reg0.ENA
-inc_day => day[7].IN1
-inc_month => month[7].IN1
-inc_year => year[7].IN1
+inc_day => always0.IN1
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_month => month.OUTPUTSELECT
+inc_year => always2.IN1
 day[0] <= day[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 day[1] <= day[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 day[2] <= day[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

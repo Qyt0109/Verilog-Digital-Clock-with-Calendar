@@ -2,244 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'inc_2'
-Slack : -56.606
-TNS   : -1934.628
-
-Type  : Slow 1200mV 85C Model Setup 'reset'
-Slack : -53.091
-TNS   : -1211.032
-
-Type  : Slow 1200mV 85C Model Setup 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -25.123
-TNS   : -168.280
+Type  : Slow 1200mV 85C Model Setup 'inc_enable'
+Slack : -5.258
+TNS   : -163.681
 
 Type  : Slow 1200mV 85C Model Setup 'clk_100MHz'
-Slack : -3.364
-TNS   : -81.268
+Slack : -3.106
+TNS   : -71.357
 
-Type  : Slow 1200mV 85C Model Hold 'inc_2'
-Slack : -0.083
-TNS   : -0.136
+Type  : Slow 1200mV 85C Model Hold 'inc_enable'
+Slack : 0.123
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_100MHz'
-Slack : 0.025
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'reset'
-Slack : 0.518
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 1.622
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Recovery 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -5.938
-TNS   : -47.420
-
-Type  : Slow 1200mV 85C Model Recovery 'inc_2'
-Slack : -4.845
-TNS   : -196.819
-
-Type  : Slow 1200mV 85C Model Recovery 'reset'
-Slack : -3.107
-TNS   : -66.235
-
-Type  : Slow 1200mV 85C Model Recovery 'clk_100MHz'
-Slack : -0.869
-TNS   : -11.047
-
-Type  : Slow 1200mV 85C Model Removal 'inc_2'
-Slack : -0.538
-TNS   : -15.258
-
-Type  : Slow 1200mV 85C Model Removal 'reset'
-Slack : -0.415
-TNS   : -2.332
-
-Type  : Slow 1200mV 85C Model Removal 'clk_100MHz'
-Slack : -0.264
-TNS   : -0.264
-
-Type  : Slow 1200mV 85C Model Removal 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 1.379
+Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_100MHz'
 Slack : -3.000
-TNS   : -76.245
+TNS   : -86.525
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inc_2'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inc_enable'
 Slack : -3.000
-TNS   : -54.400
+TNS   : -64.680
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reset'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -1.285
-TNS   : -10.280
-
-Type  : Slow 1200mV 0C Model Setup 'inc_2'
-Slack : -51.629
-TNS   : -1763.253
-
-Type  : Slow 1200mV 0C Model Setup 'reset'
-Slack : -48.491
-TNS   : -1107.199
-
-Type  : Slow 1200mV 0C Model Setup 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -22.919
-TNS   : -153.078
+Type  : Slow 1200mV 0C Model Setup 'inc_enable'
+Slack : -4.678
+TNS   : -145.468
 
 Type  : Slow 1200mV 0C Model Setup 'clk_100MHz'
-Slack : -3.045
-TNS   : -69.725
+Slack : -2.749
+TNS   : -59.861
 
-Type  : Slow 1200mV 0C Model Hold 'inc_2'
-Slack : -0.154
-TNS   : -0.215
+Type  : Slow 1200mV 0C Model Hold 'inc_enable'
+Slack : 0.042
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_100MHz'
-Slack : -0.023
-TNS   : -0.023
-
-Type  : Slow 1200mV 0C Model Hold 'reset'
-Slack : 0.479
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 1.573
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Recovery 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -5.464
-TNS   : -43.631
-
-Type  : Slow 1200mV 0C Model Recovery 'inc_2'
-Slack : -4.425
-TNS   : -181.288
-
-Type  : Slow 1200mV 0C Model Recovery 'reset'
-Slack : -3.032
-TNS   : -71.251
-
-Type  : Slow 1200mV 0C Model Recovery 'clk_100MHz'
-Slack : -0.706
-TNS   : -7.958
-
-Type  : Slow 1200mV 0C Model Removal 'inc_2'
-Slack : -0.405
-TNS   : -10.292
-
-Type  : Slow 1200mV 0C Model Removal 'reset'
-Slack : -0.345
-TNS   : -1.796
-
-Type  : Slow 1200mV 0C Model Removal 'clk_100MHz'
-Slack : -0.127
-TNS   : -0.127
-
-Type  : Slow 1200mV 0C Model Removal 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 1.337
+Slack : 0.283
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_100MHz'
 Slack : -3.000
-TNS   : -76.245
+TNS   : -86.525
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inc_2'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inc_enable'
 Slack : -3.000
-TNS   : -54.400
+TNS   : -64.680
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reset'
-Slack : -3.000
-TNS   : -3.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -1.285
-TNS   : -10.280
-
-Type  : Fast 1200mV 0C Model Setup 'inc_2'
-Slack : -27.536
-TNS   : -938.700
-
-Type  : Fast 1200mV 0C Model Setup 'reset'
-Slack : -25.713
-TNS   : -577.547
-
-Type  : Fast 1200mV 0C Model Setup 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -12.126
-TNS   : -80.814
+Type  : Fast 1200mV 0C Model Setup 'inc_enable'
+Slack : -2.031
+TNS   : -57.691
 
 Type  : Fast 1200mV 0C Model Setup 'clk_100MHz'
-Slack : -1.401
-TNS   : -19.506
+Slack : -0.997
+TNS   : -17.229
 
 Type  : Fast 1200mV 0C Model Hold 'clk_100MHz'
-Slack : -0.140
-TNS   : -0.224
-
-Type  : Fast 1200mV 0C Model Hold 'inc_2'
-Slack : -0.050
-TNS   : -0.151
-
-Type  : Fast 1200mV 0C Model Hold 'reset'
-Slack : 0.049
+Slack : 0.023
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 0.554
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -2.683
-TNS   : -21.335
-
-Type  : Fast 1200mV 0C Model Recovery 'inc_2'
-Slack : -2.318
-TNS   : -96.040
-
-Type  : Fast 1200mV 0C Model Recovery 'reset'
-Slack : -0.935
-TNS   : -6.880
-
-Type  : Fast 1200mV 0C Model Recovery 'clk_100MHz'
-Slack : -0.552
-TNS   : -7.863
-
-Type  : Fast 1200mV 0C Model Removal 'clk_100MHz'
-Slack : -0.521
-TNS   : -3.767
-
-Type  : Fast 1200mV 0C Model Removal 'reset'
-Slack : -0.349
-TNS   : -7.427
-
-Type  : Fast 1200mV 0C Model Removal 'inc_2'
-Slack : -0.345
-TNS   : -10.795
-
-Type  : Fast 1200mV 0C Model Removal 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : 0.542
+Type  : Fast 1200mV 0C Model Hold 'inc_enable'
+Slack : 0.044
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_100MHz'
 Slack : -3.000
-TNS   : -63.207
+TNS   : -72.129
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inc_2'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inc_enable'
 Slack : -3.000
-TNS   : -47.701
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reset'
-Slack : -3.000
-TNS   : -13.488
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce:debounce_inc_sec|delayed_signal[1]'
-Slack : -1.000
-TNS   : -8.000
+TNS   : -64.927
 
 ------------------------------------------------------------
