@@ -1,6 +1,10 @@
 # Verilog Digital Clock with Calendar
 Digital Clock with Calendar using Verilog implemented on DE2-115 FPGA board.
 
+
+https://github.com/Qyt0109/Verilog-Digital-Clock-with-Calendar/assets/92682344/dd1a07d3-63ca-413f-82de-3c3915d61ebf
+
+
 # 1. Spec
 Assignments
 ## Thiết kế mạch đồng hồ thế kỷ 
